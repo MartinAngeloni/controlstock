@@ -254,13 +254,6 @@
     <None Include="Resources\userLogin.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database1.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Database1_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Database1.mdf</DependentUpon>
-    </Content>
     <Content Include="electroRedIco.ico" />
     <None Include="Resources\estadisticas2.png" />
     <Content Include="Utils\Icon1.ico" />
