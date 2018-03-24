@@ -35,8 +35,8 @@ namespace ControlStockWFormsApp
             this.Height = Screen.PrimaryScreen.Bounds.Height; //Obtiene el alto de la pantalla principal en pixeles. 
 
             //titulo en el medio
-            label3.AutoSize = false;
-            label3.TextAlign = ContentAlignment.MiddleCenter;
+            //label3.AutoSize = false;
+            //label3.TextAlign = ContentAlignment.MiddleCenter;
 
             
 
@@ -172,6 +172,11 @@ namespace ControlStockWFormsApp
         {
             Pedido p = new Pedido();
             p.ShowDialog();
+        }
+
+        private void tableLayoutPanel5_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

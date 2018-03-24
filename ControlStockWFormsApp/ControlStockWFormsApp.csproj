@@ -256,6 +256,16 @@
   <ItemGroup>
     <Content Include="electroRedIco.ico" />
     <None Include="Resources\estadisticas2.png" />
+    <None Include="Resources\yellowDegrade.jpg" />
+    <None Include="Resources\yellowDegrade2.jpg" />
+    <None Include="Resources\yellowDegrade21.jpg" />
+    <None Include="Resources\1_AcYLHh0_ve4TNRi6HLFcPA.jpeg" />
+    <None Include="Resources\034 Lemon Gate.png" />
+    <None Include="Resources\login2.png" />
+    <None Include="Resources\blueDegrade.jpg" />
+    <None Include="Resources\loginicon.png" />
+    <None Include="Resources\infoDegrade.jpg" />
+    <None Include="Resources\orangeDegrade.png" />
     <Content Include="Utils\Icon1.ico" />
     <None Include="Resources\electroRed.png" />
     <None Include="Resources\carrito2.png" />

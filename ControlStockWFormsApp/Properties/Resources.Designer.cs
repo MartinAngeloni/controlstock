@@ -63,6 +63,26 @@ namespace ControlStockWFormsApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _034_Lemon_Gate {
+            get {
+                object obj = ResourceManager.GetObject("034 Lemon Gate", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1_AcYLHh0_ve4TNRi6HLFcPA {
+            get {
+                object obj = ResourceManager.GetObject("1_AcYLHh0_ve4TNRi6HLFcPA", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap atari_256_colour_palette {
             get {
                 object obj = ResourceManager.GetObject("atari-256-colour-palette", resourceCulture);
@@ -86,6 +106,16 @@ namespace ControlStockWFormsApp.Properties {
         internal static System.Drawing.Bitmap barcode {
             get {
                 object obj = ResourceManager.GetObject("barcode", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap blueDegrade {
+            get {
+                object obj = ResourceManager.GetObject("blueDegrade", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -253,6 +283,36 @@ namespace ControlStockWFormsApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap infoDegrade {
+            get {
+                object obj = ResourceManager.GetObject("infoDegrade", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap login2 {
+            get {
+                object obj = ResourceManager.GetObject("login2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap loginicon {
+            get {
+                object obj = ResourceManager.GetObject("loginicon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap marca_svg {
             get {
                 object obj = ResourceManager.GetObject("marca.svg", resourceCulture);
@@ -296,6 +356,16 @@ namespace ControlStockWFormsApp.Properties {
         internal static System.Drawing.Bitmap orange_backgrounds_2560x16001 {
             get {
                 object obj = ResourceManager.GetObject("orange_backgrounds_2560x16001", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap orangeDegrade {
+            get {
+                object obj = ResourceManager.GetObject("orangeDegrade", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -376,6 +446,36 @@ namespace ControlStockWFormsApp.Properties {
         internal static System.Drawing.Bitmap users {
             get {
                 object obj = ResourceManager.GetObject("users", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap yellowDegrade {
+            get {
+                object obj = ResourceManager.GetObject("yellowDegrade", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap yellowDegrade2 {
+            get {
+                object obj = ResourceManager.GetObject("yellowDegrade2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap yellowDegrade21 {
+            get {
+                object obj = ResourceManager.GetObject("yellowDegrade21", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
