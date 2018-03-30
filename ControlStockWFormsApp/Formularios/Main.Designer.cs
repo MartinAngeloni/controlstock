@@ -281,7 +281,7 @@
             // 
             this.pictureBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.Image = global::ControlStockWFormsApp.Properties.Resources.cancel;
+            this.pictureBox6.Image = global::ControlStockWFormsApp.Properties.Resources.exit;
             this.pictureBox6.Location = new System.Drawing.Point(470, 711);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox6.Name = "pictureBox6";
@@ -387,7 +387,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox4.Image = global::ControlStockWFormsApp.Properties.Resources.atari_256_colour_palette;
+            this.pictureBox4.Image = global::ControlStockWFormsApp.Properties.Resources.palette;
             this.pictureBox4.Location = new System.Drawing.Point(470, 479);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox4.Name = "pictureBox4";

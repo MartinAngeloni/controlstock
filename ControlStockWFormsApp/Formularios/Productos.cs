@@ -31,10 +31,9 @@ namespace ControlStockWFormsApp
             //dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(70, 99, 101);
             //dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(109, 84, 79);
 
-            this.Width = 900;
-            this.Height = 500;
-
-            this.StartPosition = FormStartPosition.CenterScreen; //form en el centro de la pantalla
+            this.Width = 1000;
+            this.Height = 600;
+            
 
 
         }
