@@ -20,7 +20,10 @@ namespace ControlStockWFormsApp.Formularios
 
 			dataGridView1.DataSource = Utils.DAOProducto.productos;
 
-			button1.BackColor = System.Drawing.Color.FromArgb(198, 216, 175); //verde manzan
+            dataGridView1.Columns["id"].Visible = false;
+            dataGridView1.Columns["id_producto"].Visible = false;
+
+            button1.BackColor = System.Drawing.Color.FromArgb(198, 216, 175); //verde manzan
             button2.BackColor = System.Drawing.Color.FromArgb(198, 216, 175); //verde manzana
 
             this.Width = 900;
@@ -53,6 +56,11 @@ namespace ControlStockWFormsApp.Formularios
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

@@ -266,6 +266,9 @@
     <None Include="Resources\loginicon.png" />
     <None Include="Resources\infoDegrade.jpg" />
     <None Include="Resources\orangeDegrade.png" />
+    <None Include="Resources\maps-and-flags.png" />
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\trash.png" />
     <Content Include="Utils\Icon1.ico" />
     <None Include="Resources\electroRed.png" />
     <None Include="Resources\carrito2.png" />

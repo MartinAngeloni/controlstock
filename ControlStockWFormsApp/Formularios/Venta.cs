@@ -198,7 +198,7 @@ namespace ControlStockWFormsApp
         {
             if ("".Equals(textBox3.Text))
             {
-                MessageBox.Show("Ingrese el monto cobrado");
+                MessageBox.Show("Por favor agregue productos a la venta y luego ingrese el monto cobrado");
             }
             else
             {

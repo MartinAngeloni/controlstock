@@ -25,7 +25,7 @@ namespace ControlStockWFormsApp
             button2.BackColor = System.Drawing.Color.FromArgb(198, 216, 175); //verde manzana
             button3.BackColor = System.Drawing.Color.FromArgb(198, 216, 175); //verde manzan
 
-            this.Width = 400;
+            this.Width = 600;
             this.Height = 500;
             this.StartPosition = FormStartPosition.CenterScreen; //form en el centro de la pantalla
 
@@ -94,6 +94,11 @@ namespace ControlStockWFormsApp
         private void Color_FormClosing(object sender, FormClosingEventArgs e)
         {
             
+        }
+
+        private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
