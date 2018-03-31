@@ -192,5 +192,10 @@ namespace ControlStockWFormsApp
         {
 
         }
+
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
