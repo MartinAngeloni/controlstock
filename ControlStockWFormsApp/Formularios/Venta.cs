@@ -236,5 +236,10 @@ namespace ControlStockWFormsApp
         {
 
         }
+
+        private void button3_Click_3(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
