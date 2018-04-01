@@ -19,12 +19,7 @@ namespace ControlStockWFormsApp
 		public Venta()
         {
             InitializeComponent();
-
-            button1.BackColor = System.Drawing.Color.FromArgb(198, 216, 175); //verde manzan
-            button2.BackColor = System.Drawing.Color.FromArgb(198, 216, 175); //verde manzana
-            button3.BackColor = System.Drawing.Color.FromArgb(198, 216, 175); //verde manzan
-            button5.BackColor = System.Drawing.Color.FromArgb(198, 216, 175); //verde manzana
-            button4.BackColor = System.Drawing.Color.FromArgb(198, 216, 175); //verde manzan
+            
 
             label8.AutoSize = false;
             label8.TextAlign = ContentAlignment.MiddleCenter;

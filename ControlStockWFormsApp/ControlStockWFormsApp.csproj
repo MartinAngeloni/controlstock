@@ -277,6 +277,13 @@
     <None Include="Resources\barcode %281%29.png" />
     <None Include="Resources\palette.png" />
     <None Include="Resources\refresh.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\eraser.png" />
+    <None Include="Resources\checked.png" />
+    <None Include="Resources\money2.png" />
+    <None Include="Resources\shopping-cart %281%29.png" />
+    <None Include="Resources\credit-card.png" />
+    <None Include="Resources\notes.png" />
     <Content Include="Utils\Icon1.ico" />
     <None Include="Resources\electroRed.png" />
     <None Include="Resources\carrito2.png" />
