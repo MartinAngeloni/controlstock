@@ -80,5 +80,17 @@ namespace ControlStockWFormsApp.Formularios
 		{
 			Utils.BackUpRestore.restoreAllDB();
 		}
-	}
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Close();
+        }
+    }
 }

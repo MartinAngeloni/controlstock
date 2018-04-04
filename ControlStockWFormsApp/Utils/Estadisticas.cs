@@ -11,7 +11,8 @@ namespace ControlStockWFormsApp.Utils
 	{
 		public static float costoPedidosMesActual;
 		public static float gananciaNetaDelMesActual;
-		public static string productoMasVendidoDelMes;
+        public static float gananciaTotalDelMesActual;
+        public static string productoMasVendidoDelMes;
 		public static string productoMenosVendidoDelMes;
 		public static string productoConMasRecaudo;
 		public static string productoMasVendidoEntreFechas;
@@ -25,7 +26,7 @@ namespace ControlStockWFormsApp.Utils
 
 			costoPedidosMesActual = obtenerPrecioDeConsulta("select IsNull(SUM(PP.precio*PP.cantidad),0) from Pedido P inner join ProdXPedido PP on P.id_pedido = PP.id_pedido where Month(P.fecha) = MONTH((select SYSDATETIME())) and Year(P.fecha) = Year((select SYSDATETIME()))");
 
-			gananciaNetaDelMesActual = obtenerPrecioDeConsulta("Select IsNull(SUM(PV.precio*PV.cantidad),0) from Venta V inner join ProdXVenta PV on V.id = PV.id_venta where Month(V.fecha) = MONTH((select SYSDATETIME())) and Year(V.fecha) = Year((select SYSDATETIME()))");
+			gananciaNetaDelMesActual = obtenerPrecioDeConsulta("Select IsNull(SUM((PV.precio*PV.cantidad)+V.diferencia_cambio),0) from Venta V inner join ProdXVenta PV on V.id = PV.id_venta where Month(V.fecha) = MONTH((select SYSDATETIME())) and Year(V.fecha) = Year((select SYSDATETIME()))");
 
 			productoMasVendidoDelMes = obtenerProductoDeConsulta("select top 1 Max(P.Nombre),MAX(P.Modelo),SUM(PV.cantidad) as cant from ProXm PM inner join Producto P on PM.id_producto = P.Cod_Producto inner join ProdXVenta PV on PV.id_producto = PM.codigo inner join Venta V on V.id = PV.id_venta where Month(V.fecha) = MONTH((select SYSDATETIME())) and Year(V.fecha) = Year((select SYSDATETIME())) group by PM.codigo order by cant desc");
 

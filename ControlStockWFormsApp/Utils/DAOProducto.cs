@@ -111,9 +111,6 @@ namespace ControlStockWFormsApp.Utils
 
         public static void actualizarStockProducto(string codigo, int difStock)
         {
-
-
-
             string query = @"select stock from ProXm where codigo = '" + codigo + "'";
             SqlCommand cm = new SqlCommand(query, Utils.Variables.conexion);
             SqlDataReader drr = cm.ExecuteReader();

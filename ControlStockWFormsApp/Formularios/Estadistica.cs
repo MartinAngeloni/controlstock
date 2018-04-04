@@ -18,6 +18,7 @@ namespace ControlStockWFormsApp.Formularios
 
             Utils.Estadisticas.obtenerEstadisticasMensuales();
             label12.Text = Utils.Estadisticas.gananciaNetaDelMesActual.ToString();
+          
             label13.Text = Utils.Estadisticas.productoMasVendidoDelMes.ToString();
             label14.Text = Utils.Estadisticas.productoConMasRecaudo.ToString();
             label15.Text = Utils.Estadisticas.costoPedidosMesActual.ToString();
@@ -25,6 +26,13 @@ namespace ControlStockWFormsApp.Formularios
 
             label16.Text = "";
             label17.Text = "";
+            if (Utils.Estadisticas.gananciaNetaDelMesActual - Utils.Estadisticas.costoPedidosMesActual < 0) {
+                label19.Text = 0.ToString();
+            } else
+            {
+                label19.Text = (Utils.Estadisticas.gananciaNetaDelMesActual - Utils.Estadisticas.costoPedidosMesActual).ToString();
+            }
+            
 
             //label10.AutoSize = false;
             //label10.TextAlign = ContentAlignment.MiddleCenter;
@@ -102,6 +110,11 @@ namespace ControlStockWFormsApp.Formularios
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }

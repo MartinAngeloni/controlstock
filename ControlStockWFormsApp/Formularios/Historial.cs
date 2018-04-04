@@ -56,7 +56,6 @@ namespace ControlStockWFormsApp.Formularios
 
                 if ("pedido".Equals(tipo))
                 {
-
                     Utils.DAOPedido.obtenerHistorialPedido();
                     dataGridView1.DataSource = Utils.DAOPedido.historialPedido;
                     this.Text = "Historial de pedido";
@@ -89,6 +88,21 @@ namespace ControlStockWFormsApp.Formularios
                             Program.main.actualizarAlerta();
                         }
 
+                    }
+
+
+                }
+            }
+            else if ("venta".Equals(tipo))
+            {
+                if (dataGridView1.SelectedRows.Count != 0)
+                {
+                    DialogResult result = MessageBox.Show("Esta seguro de cancelar la venta?", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                    if (result.Equals(DialogResult.OK))
+                    {
+                        Utils.DAOVenta.cancelarVenta(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value));
+                        Utils.DAOVenta.obtenerHistorialVentas();
+                        dataGridView1.DataSource = Utils.DAOVenta.historialVenta;
                     }
 
 

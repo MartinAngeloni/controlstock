@@ -112,6 +112,33 @@ namespace ControlStockWFormsApp.Utils
 			sqaVenta.Fill(venta);
 		}
 
+        public static void cancelarVenta(int codigo)
+        {
+            string query = @"select pv.id_producto,pv.cantidad from venta v inner join ProdXVenta pv on v.id = pv.id_venta where pv.id = "+codigo;
+            SqlCommand cm = new SqlCommand(query, Utils.Variables.conexion);
+            Variables.conexion.Open();
+            SqlDataReader drr = cm.ExecuteReader();
+            List<String> data = new List<string>();
+            while (drr.Read()) {
+                data.Add(drr["id_producto"].ToString());
+                data.Add(drr["cantidad"].ToString());
+            }
+            drr.Close();
+            for (int x =0;x<data.Count;x=x+2)
+            {
+                DAOProducto.actualizarStockProducto(data[x],Convert.ToInt32(data[x+1]));
+            }
+            String sqlrxv = "delete from ProdXVenta where id_venta = " + codigo;
+            SqlCommand cmd1 = new SqlCommand(sqlrxv, Variables.conexion);
+            cmd1.CommandType = CommandType.Text;
+            cmd1.ExecuteNonQuery();
+            String sqlrv = "delete from Venta where id = " + codigo;
+            SqlCommand cmd2 = new SqlCommand(sqlrv, Variables.conexion);
+            cmd2.CommandType = CommandType.Text;
+            cmd2.ExecuteNonQuery();
+            Variables.conexion.Close();
+        }
+
         public static void obtenerHistorialVentas()
         {
             historialVenta = new DataTable();
