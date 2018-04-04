@@ -25,7 +25,7 @@ namespace ControlStockWFormsApp
             label8.TextAlign = ContentAlignment.MiddleCenter;
 
             this.Width = 1000;
-            this.Height = 650;
+            this.Height = 680;
             this.StartPosition = FormStartPosition.CenterScreen; //form en el centro de la pantalla
 
 			Utils.DAOProducto.obtenerProductos();

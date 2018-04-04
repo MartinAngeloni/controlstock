@@ -284,6 +284,12 @@
     <None Include="Resources\shopping-cart %281%29.png" />
     <None Include="Resources\credit-card.png" />
     <None Include="Resources\notes.png" />
+    <None Include="Resources\choices.png" />
+    <None Include="Resources\list.png" />
+    <None Include="Resources\list1.png" />
+    <None Include="Resources\list2.png" />
+    <None Include="Resources\packing.png" />
+    <None Include="Resources\list3.png" />
     <Content Include="Utils\Icon1.ico" />
     <None Include="Resources\electroRed.png" />
     <None Include="Resources\carrito2.png" />
