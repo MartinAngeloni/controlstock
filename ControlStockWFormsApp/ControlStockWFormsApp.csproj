@@ -290,6 +290,8 @@
     <None Include="Resources\list2.png" />
     <None Include="Resources\packing.png" />
     <None Include="Resources\list3.png" />
+    <Content Include="Resources\shopping_cart_1.png" />
+    <None Include="Resources\wallet.png" />
     <Content Include="Utils\Icon1.ico" />
     <None Include="Resources\electroRed.png" />
     <None Include="Resources\carrito2.png" />

@@ -62,5 +62,13 @@ namespace ControlStockWFormsApp.Formularios
         {
             Dispose();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            //sintaxis para busqueda en dataGridView
+            DataView dataView = Utils.DAOProducto.productos.DefaultView;
+            dataView.RowFilter = string.Format("nombre like '%{0}%' or marca like '%{0}%' or codigo like '%{0}%' or modelo like '%{0}%' or color like '%{0}%'", textBox1.Text); //busqueda por nombre o marca
+            dataGridView1.DataSource = dataView;
+        }
     }
 }
