@@ -290,8 +290,14 @@
     <None Include="Resources\list2.png" />
     <None Include="Resources\packing.png" />
     <None Include="Resources\list3.png" />
+    <None Include="Resources\calendar.png" />
+    <None Include="Resources\pie-chart.png" />
+    <None Include="Resources\calendar2.png" />
     <Content Include="Resources\shopping_cart_1.png" />
     <None Include="Resources\wallet.png" />
+    <None Include="Resources\thumb-up.png" />
+    <None Include="Resources\thumb-finger-up.png" />
+    <None Include="Resources\thumbs-down-hand.png" />
     <Content Include="Utils\Icon1.ico" />
     <None Include="Resources\electroRed.png" />
     <None Include="Resources\carrito2.png" />

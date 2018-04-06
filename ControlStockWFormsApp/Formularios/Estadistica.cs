@@ -17,20 +17,20 @@ namespace ControlStockWFormsApp.Formularios
             InitializeComponent();
 
             Utils.Estadisticas.obtenerEstadisticasMensuales();
-            label12.Text = Utils.Estadisticas.gananciaNetaDelMesActual.ToString();
+            label12.Text = "$" + Utils.Estadisticas.gananciaNetaDelMesActual.ToString();
           
             label13.Text = Utils.Estadisticas.productoMasVendidoDelMes.ToString();
             label14.Text = Utils.Estadisticas.productoConMasRecaudo.ToString();
-            label15.Text = Utils.Estadisticas.costoPedidosMesActual.ToString();
+            label15.Text = "$" + Utils.Estadisticas.costoPedidosMesActual.ToString();
             label11.Text = Utils.Estadisticas.productoMenosVendidoDelMes.ToString();
 
             label16.Text = "";
             label17.Text = "";
             if (Utils.Estadisticas.gananciaNetaDelMesActual - Utils.Estadisticas.costoPedidosMesActual < 0) {
-                label19.Text = 0.ToString();
+                label19.Text = "$" + 0.ToString();
             } else
             {
-                label19.Text = (Utils.Estadisticas.gananciaNetaDelMesActual - Utils.Estadisticas.costoPedidosMesActual).ToString();
+                label19.Text = "$" + (Utils.Estadisticas.gananciaNetaDelMesActual - Utils.Estadisticas.costoPedidosMesActual).ToString();
             }
             
 
@@ -115,6 +115,26 @@ namespace ControlStockWFormsApp.Formularios
         }
 
         private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel4_Paint_3(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel7_Paint(object sender, PaintEventArgs e)
         {
 
         }

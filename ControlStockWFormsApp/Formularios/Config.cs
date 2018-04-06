@@ -15,14 +15,16 @@ namespace ControlStockWFormsApp.Formularios
 	{
         Inicio i = new Inicio();
 
+
         public string stringCon;
 		public Config()
 		{
 			InitializeComponent();
             i.config = this;
             i.Show();
-           
-            
+            this.Width = 500;
+            this.Height = 300;
+
 
         }
 
