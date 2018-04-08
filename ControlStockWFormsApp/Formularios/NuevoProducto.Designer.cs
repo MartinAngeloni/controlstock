@@ -108,6 +108,7 @@
             this.textPrecio.Name = "textPrecio";
             this.textPrecio.Size = new System.Drawing.Size(274, 38);
             this.textPrecio.TabIndex = 1;
+            this.textPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textPrecio_KeyPress);
             // 
             // button1
             // 
@@ -144,6 +145,7 @@
             this.textStock.Size = new System.Drawing.Size(274, 38);
             this.textStock.TabIndex = 2;
             this.textStock.TextChanged += new System.EventHandler(this.textStock_TextChanged);
+            this.textStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textStock_KeyPress);
             // 
             // label6
             // 
@@ -294,6 +296,7 @@
             this.textBox1.Size = new System.Drawing.Size(274, 38);
             this.textBox1.TabIndex = 3;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label9
             // 

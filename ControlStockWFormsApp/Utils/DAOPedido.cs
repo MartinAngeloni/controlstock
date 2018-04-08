@@ -190,5 +190,33 @@ namespace ControlStockWFormsApp.Utils
         }
 
 
+        public static void cancelarPedido(int codigo)
+        {
+            string query = @"select pp.id_producto,pp.cantidad from Pedido p inner join ProdXPedido pp on p.id_pedido = pp.id_pedido where pp.id_pedido = " + codigo;
+            SqlCommand cm = new SqlCommand(query, Utils.Variables.conexion);
+            Variables.conexion.Open();
+            SqlDataReader drr = cm.ExecuteReader();
+            List<String> data = new List<string>();
+            while (drr.Read())
+            {
+                data.Add(drr["id_producto"].ToString());
+                data.Add(drr["cantidad"].ToString());
+            }
+            drr.Close();
+            for (int x = 0; x < data.Count; x = x + 2)
+            {
+                DAOProducto.actualizarStockProducto(data[x], -Convert.ToInt32(data[x + 1]));
+            }
+            String sqlrxv = "delete from ProdXPedido where id_pedido = " + codigo;
+            SqlCommand cmd1 = new SqlCommand(sqlrxv, Variables.conexion);
+            cmd1.CommandType = CommandType.Text;
+            cmd1.ExecuteNonQuery();
+            String sqlrv = "delete from Pedido where id_pedido = " + codigo;
+            SqlCommand cmd2 = new SqlCommand(sqlrv, Variables.conexion);
+            cmd2.CommandType = CommandType.Text;
+            cmd2.ExecuteNonQuery();
+            Variables.conexion.Close();
+        }
+
     }
 }

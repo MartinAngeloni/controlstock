@@ -78,7 +78,7 @@ namespace ControlStockWFormsApp.Utils
 		}
 
 		public static void obtenerProductoConMasVentasEntreFechas(DateTime start, DateTime end) {
-
+            end.AddDays(1);
             Console.WriteLine(start.ToString("yyyy-MM-dd"));
             Variables.conexion.Open();
             productoMasVendidoEntreFechas = obtenerProductoDeConsulta("select top 1 Max(P.Nombre),MAX(P.Modelo),SUM(PV.cantidad) as cant from ProXm PM inner join Producto P on PM.id_producto = P.Cod_Producto inner join ProdXVenta PV on PV.id_producto = PM.codigo inner join Venta V on V.id = PV.id_venta where V.fecha >= '"+ start.ToString("yyyy-MM-dd") + "' and V.fecha <= '"+ end.ToString("yyyy-MM-dd") + "' group by PM.codigo order by cant desc");
@@ -87,6 +87,7 @@ namespace ControlStockWFormsApp.Utils
 
 		public static void obtenerProductoConMenosVentasEntreFechas(DateTime start, DateTime end)
 		{
+            end.AddDays(1);
             Variables.conexion.Open();
             productoMenosVendidoEntreFechas = obtenerProductoDeConsulta("select top 1 Max(P.Nombre),MAX(P.Modelo),SUM(PV.cantidad) as cant from ProXm PM inner join Producto P on PM.id_producto = P.Cod_Producto inner join ProdXVenta PV on PV.id_producto = PM.codigo inner join Venta V on V.id = PV.id_venta where V.fecha >= '" + start.ToString("yyyy-MM-dd") + "' and V.fecha <= '" + end.ToString("yyyy-MM-dd") + "' group by PM.codigo order by cant asc");
             Variables.conexion.Close();

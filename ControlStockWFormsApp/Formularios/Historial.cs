@@ -108,6 +108,21 @@ namespace ControlStockWFormsApp.Formularios
 
                 }
             }
+            else if ("pedido".Equals(tipo))
+            {
+                if (dataGridView1.SelectedRows.Count != 0)
+                {
+                    DialogResult result = MessageBox.Show("Esta seguro de cancelar el pedido?", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                    if (result.Equals(DialogResult.OK))
+                    {
+                        Utils.DAOPedido.cancelarPedido(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value));
+                        Utils.DAOPedido.obtenerHistorialPedido();
+                        dataGridView1.DataSource = Utils.DAOPedido.historialPedido;
+                    }
+
+
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

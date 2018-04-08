@@ -197,5 +197,31 @@ namespace ControlStockWFormsApp
         {
 
         }
+
+        private void textStock_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //solo enteros
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back))
+            { e.Handled = true; }
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //solo enteros
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back))
+            { e.Handled = true; }
+        }
+
+        private void textPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //permite solo numeros con comas
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == ','))
+            { e.Handled = true; }
+            TextBox txtDecimal = sender as TextBox;
+            if (e.KeyChar == ',' && txtDecimal.Text.Contains(","))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

@@ -213,15 +213,15 @@
             this.tableLayoutPanel3.Controls.Add(this.pictureBox3, 0, 4);
             this.tableLayoutPanel3.Controls.Add(this.button2, 1, 2);
             this.tableLayoutPanel3.Controls.Add(this.pictureBox6, 0, 5);
+            this.tableLayoutPanel3.Controls.Add(this.button6, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.pictureBox4, 0, 3);
-            this.tableLayoutPanel3.Controls.Add(this.pictureBox2, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.button6, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.button1, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.pictureBox1, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.button5, 1, 5);
             this.tableLayoutPanel3.Controls.Add(this.button4, 1, 3);
-            this.tableLayoutPanel3.Controls.Add(this.pictureBox1, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.button3, 1, 4);
             this.tableLayoutPanel3.Controls.Add(this.pictureBox5, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.button1, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.pictureBox2, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(1580, 163);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
@@ -292,7 +292,7 @@
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = global::ControlStockWFormsApp.Properties.Resources.search;
-            this.pictureBox2.Location = new System.Drawing.Point(49, 100);
+            this.pictureBox2.Location = new System.Drawing.Point(49, 3);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(100, 78);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -308,11 +308,11 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button6.Font = new System.Drawing.Font("Lucida Sans", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(173, 2);
+            this.button6.Location = new System.Drawing.Point(173, 99);
             this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(383, 79);
-            this.button6.TabIndex = 0;
+            this.button6.TabIndex = 1;
             this.button6.Text = "Agregar";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
@@ -326,11 +326,11 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Lucida Sans", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(173, 99);
+            this.button1.Location = new System.Drawing.Point(173, 2);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(383, 79);
-            this.button1.TabIndex = 1;
+            this.button1.TabIndex = 0;
             this.button1.Text = "Buscar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -372,7 +372,7 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::ControlStockWFormsApp.Properties.Resources.plus;
-            this.pictureBox1.Location = new System.Drawing.Point(49, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(49, 100);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 78);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

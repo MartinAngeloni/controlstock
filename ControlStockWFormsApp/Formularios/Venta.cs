@@ -34,9 +34,10 @@ namespace ControlStockWFormsApp
 			Utils.DAOVenta.initRealizandoVenta();
 
 			initDt();
-			dataGridView1.DataSource = Utils.DAOPedido.realizandoPedido;
+			//dataGridView1.DataSource = Utils.DAOPedido.realizandoPedido;
+            dataGridView1.DataSource = Utils.DAOVenta.realizandoVenta;
 
-		}
+        }
 
 		private void initDt()
 		{
@@ -169,7 +170,10 @@ namespace ControlStockWFormsApp
             }
             totalVenta = total;
             textBox3.Text = total.ToString();
+            textBox4.Text = total.ToString();
             label5.Text = "$ " + total.ToString();
+
+            
         }
 
 		private void button3_Click_1(object sender, EventArgs e)
@@ -194,6 +198,10 @@ namespace ControlStockWFormsApp
             if ("".Equals(textBox3.Text))
             {
                 MessageBox.Show("Por favor agregue productos a la venta y luego ingrese el monto cobrado");
+            }
+            if ("".Equals(textBox4.Text))
+            {
+                MessageBox.Show("Por favor ingrese el dinero recibido por el cliente");
             }
             else
             {
@@ -229,7 +237,10 @@ namespace ControlStockWFormsApp
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-
+            if (textBox4.Text != "" && textBox3.Text != "" && Convert.ToDouble(textBox4.Text) - Convert.ToDouble(textBox3.Text) > 0)
+                label10.Text = "$" + (Convert.ToDouble(textBox4.Text) - Convert.ToDouble(textBox3.Text)).ToString();
+            else
+                label10.Text = "$" + 0.ToString();
         }
 
         private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
@@ -253,6 +264,19 @@ namespace ControlStockWFormsApp
         }
 
         private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox4.Text != "" && textBox3.Text != "" && Convert.ToDouble(textBox4.Text) - Convert.ToDouble(textBox3.Text) > 0)
+                label10.Text = "$" + (Convert.ToDouble(textBox4.Text) - Convert.ToDouble(textBox3.Text)).ToString();
+            else
+                label10.Text = "$" + 0.ToString();
+        }
+
+        private void label10_Click(object sender, EventArgs e)
         {
 
         }

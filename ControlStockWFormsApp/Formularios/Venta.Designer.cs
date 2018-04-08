@@ -126,12 +126,12 @@
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel7, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 165);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 164);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.32479F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.67522F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(2237, 961);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(2237, 962);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // tableLayoutPanel3
@@ -154,19 +154,19 @@
             this.tableLayoutPanel3.Controls.Add(this.button4, 3, 3);
             this.tableLayoutPanel3.Controls.Add(this.textBox3, 3, 4);
             this.tableLayoutPanel3.Controls.Add(this.label6, 2, 4);
-            this.tableLayoutPanel3.Controls.Add(this.button1, 3, 6);
-            this.tableLayoutPanel3.Controls.Add(this.pictureBox9, 2, 6);
             this.tableLayoutPanel3.Controls.Add(this.textBox4, 3, 5);
             this.tableLayoutPanel3.Controls.Add(this.label7, 2, 5);
             this.tableLayoutPanel3.Controls.Add(this.pictureBox10, 1, 5);
             this.tableLayoutPanel3.Controls.Add(this.pictureBox13, 2, 9);
             this.tableLayoutPanel3.Controls.Add(this.button3, 3, 9);
-            this.tableLayoutPanel3.Controls.Add(this.label4, 1, 7);
-            this.tableLayoutPanel3.Controls.Add(this.pictureBox2, 2, 7);
-            this.tableLayoutPanel3.Controls.Add(this.label5, 3, 7);
-            this.tableLayoutPanel3.Controls.Add(this.label9, 2, 8);
-            this.tableLayoutPanel3.Controls.Add(this.label10, 3, 8);
             this.tableLayoutPanel3.Controls.Add(this.pictureBox1, 1, 4);
+            this.tableLayoutPanel3.Controls.Add(this.label4, 1, 6);
+            this.tableLayoutPanel3.Controls.Add(this.pictureBox2, 2, 6);
+            this.tableLayoutPanel3.Controls.Add(this.label5, 3, 6);
+            this.tableLayoutPanel3.Controls.Add(this.label9, 2, 7);
+            this.tableLayoutPanel3.Controls.Add(this.button1, 3, 8);
+            this.tableLayoutPanel3.Controls.Add(this.label10, 3, 7);
+            this.tableLayoutPanel3.Controls.Add(this.pictureBox9, 2, 8);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(1310, 111);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -177,12 +177,12 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.729642F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.736718F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.972845F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.763416F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.12824F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.319953F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.16057F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.50943F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.311321F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.787736F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.669811F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.918687F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(924, 847);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(924, 848);
             this.tableLayoutPanel3.TabIndex = 17;
             this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
             // 
@@ -336,14 +336,14 @@
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Lucida Sans", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(468, 467);
+            this.button1.Location = new System.Drawing.Point(468, 657);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(417, 66);
@@ -354,9 +354,9 @@
             // 
             // pictureBox9
             // 
-            this.pictureBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox9.Image = global::ControlStockWFormsApp.Properties.Resources._checked;
-            this.pictureBox9.Location = new System.Drawing.Point(384, 467);
+            this.pictureBox9.Location = new System.Drawing.Point(384, 658);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(78, 65);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -370,6 +370,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(417, 38);
             this.textBox4.TabIndex = 5;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label7
             // 
@@ -397,7 +398,7 @@
             // 
             this.pictureBox13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox13.Image = global::ControlStockWFormsApp.Properties.Resources.exit;
-            this.pictureBox13.Location = new System.Drawing.Point(384, 751);
+            this.pictureBox13.Location = new System.Drawing.Point(384, 752);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(78, 65);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -413,7 +414,7 @@
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("Lucida Sans", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(468, 751);
+            this.button3.Location = new System.Drawing.Point(468, 752);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(417, 66);
@@ -427,7 +428,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Lucida Sans", 14.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(28, 567);
+            this.label4.Location = new System.Drawing.Point(28, 495);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(163, 55);
             this.label4.TabIndex = 6;
@@ -437,7 +438,7 @@
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBox2.Image = global::ControlStockWFormsApp.Properties.Resources.dinero1;
-            this.pictureBox2.Location = new System.Drawing.Point(200, 538);
+            this.pictureBox2.Location = new System.Drawing.Point(200, 467);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(201, 112);
@@ -450,7 +451,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Lucida Sans", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(468, 549);
+            this.label5.Location = new System.Drawing.Point(468, 478);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(166, 90);
             this.label5.TabIndex = 9;
@@ -461,7 +462,7 @@
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Lucida Sans", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(200, 669);
+            this.label9.Location = new System.Drawing.Point(200, 608);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(133, 32);
             this.label9.TabIndex = 30;
@@ -472,11 +473,12 @@
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Lucida Sans", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(468, 669);
+            this.label10.Location = new System.Drawing.Point(468, 608);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(51, 32);
             this.label10.TabIndex = 7;
             this.label10.Text = "$0";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // pictureBox1
             // 
@@ -503,7 +505,7 @@
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.67961F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.32039F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1301, 847);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1301, 848);
             this.tableLayoutPanel4.TabIndex = 18;
             // 
             // dataGridView1
@@ -521,7 +523,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 40;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1262, 719);
+            this.dataGridView1.Size = new System.Drawing.Size(1262, 720);
             this.dataGridView1.TabIndex = 0;
             // 
             // tableLayoutPanel8
@@ -532,7 +534,7 @@
             this.tableLayoutPanel8.Controls.Add(this.button6, 1, 0);
             this.tableLayoutPanel8.Controls.Add(this.pictureBox5, 0, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(36, 728);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(36, 729);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 2;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75.82417F));
@@ -667,14 +669,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(2237, 156);
+            this.panel1.Size = new System.Drawing.Size(2237, 155);
             this.panel1.TabIndex = 1;
             // 
             // pictureBox12
             // 
             this.pictureBox12.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBox12.Image = global::ControlStockWFormsApp.Properties.Resources.notes;
-            this.pictureBox12.Location = new System.Drawing.Point(34, 15);
+            this.pictureBox12.Location = new System.Drawing.Point(34, 14);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(147, 118);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -685,7 +687,7 @@
             // 
             this.pictureBox11.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBox11.Image = global::ControlStockWFormsApp.Properties.Resources.credit_card;
-            this.pictureBox11.Location = new System.Drawing.Point(202, 15);
+            this.pictureBox11.Location = new System.Drawing.Point(202, 14);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(147, 118);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

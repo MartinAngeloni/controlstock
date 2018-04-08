@@ -74,7 +74,7 @@ namespace ControlStockWFormsApp
         private void button3_Click(object sender, EventArgs e)
         {
 					
-			Utils.DAOPedido.CrearPedido(); //aqui da error al presionar eralizar pedido en el formulario
+			Utils.DAOPedido.CrearPedido();
 
 			if (Utils.DAOPedido.error)
 			{
@@ -132,11 +132,11 @@ namespace ControlStockWFormsApp
 			{
 				MessageBox.Show("Por favor ingrese el codigo del producto");
 			}
-			else if ("".Equals(textBox3.Text))
+			else if ("".Equals(textBox2.Text))
 			{
 				MessageBox.Show("Por favor ingrese una cantidad");
 			}
-			else if ("".Equals(textBox4.Text))
+			else if ("".Equals(textBox3.Text))
 			{
 				MessageBox.Show("Por favor ingrese el precio");
 			}
