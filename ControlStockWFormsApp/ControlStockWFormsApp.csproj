@@ -87,6 +87,12 @@
     <Compile Include="Formularios\ConfigBackUpRestore.Designer.cs">
       <DependentUpon>ConfigBackUpRestore.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\CrearProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\CrearProveedor.Designer.cs">
+      <DependentUpon>CrearProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\EditarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,12 @@
     <Compile Include="Formularios\Pedido.Designer.cs">
       <DependentUpon>Pedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Proveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Proveedor.Designer.cs">
+      <DependentUpon>Proveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\SeleccionDeProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +178,7 @@
     <Compile Include="Utils\DAOColor.cs" />
     <Compile Include="Utils\DAOMarca.cs" />
     <Compile Include="Utils\DAOPedido.cs" />
+    <Compile Include="Utils\DAOProveedor.cs" />
     <Compile Include="Utils\DAOUsuario.cs" />
     <Compile Include="Utils\DAOVenta.cs" />
     <Compile Include="Utils\Estadisticas.cs" />
@@ -187,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ConfigBackUpRestore.resx">
       <DependentUpon>ConfigBackUpRestore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\CrearProveedor.resx">
+      <DependentUpon>CrearProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\EditarProducto.resx">
       <DependentUpon>EditarProducto.cs</DependentUpon>
@@ -220,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Pedido.resx">
       <DependentUpon>Pedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Proveedor.resx">
+      <DependentUpon>Proveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\SeleccionDeProducto.resx">
       <DependentUpon>SeleccionDeProducto.cs</DependentUpon>
@@ -293,6 +312,7 @@
     <None Include="Resources\calendar.png" />
     <None Include="Resources\pie-chart.png" />
     <None Include="Resources\calendar2.png" />
+    <None Include="Resources\delivery-man.png" />
     <Content Include="Resources\shopping_cart_1.png" />
     <None Include="Resources\wallet.png" />
     <None Include="Resources\thumb-up.png" />

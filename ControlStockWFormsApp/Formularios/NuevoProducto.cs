@@ -39,6 +39,8 @@ namespace ControlStockWFormsApp
             button1.BackColor = System.Drawing.Color.FromArgb(198, 216, 175); //verde manzan
             button2.BackColor = System.Drawing.Color.FromArgb(198, 216, 175); //verde manzana
 
+            textStock.Enabled = false;
+
             this.Width = 400;
             this.Height = 500;
             this.StartPosition = FormStartPosition.CenterScreen; //form en el centro de la pantalla
@@ -73,10 +75,6 @@ namespace ControlStockWFormsApp
             else if ("".Equals(textPrecio.Text))
             {
                 MessageBox.Show("Ingrese un precio");
-            }
-            else if ("".Equals(textStock.Text))
-            {
-                MessageBox.Show("Ingrese un valor de stock disponible");
             }
             else if (Utils.DAOColor.colores.Rows.Count < 1)
             {
@@ -118,7 +116,7 @@ namespace ControlStockWFormsApp
                 proxm[2] = id;
                 proxm[3] = Convert.ToDouble(textPrecio.Text); //revisar esta falla, el precio es float
                 proxm[4] = Convert.ToInt32(comboBox2.SelectedValue);
-                proxm[5] = Convert.ToInt32(textStock.Text);
+                proxm[5] = 0; //Convert.ToInt32(textStock.Text);
 				if (checkBox1.Checked)
 				{
 					proxm[6] = textCodigo.Text;
@@ -222,6 +220,11 @@ namespace ControlStockWFormsApp
             {
                 e.Handled = true;
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
