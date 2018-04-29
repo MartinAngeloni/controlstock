@@ -15,6 +15,10 @@ namespace ControlStockWFormsApp.Formularios
         public Proveedor()
         {
             InitializeComponent();
+			Utils.DAOProveedor.obtenerProveedores();
+
+			
+
 
             this.Width = 1000;
             this.Height = 600;

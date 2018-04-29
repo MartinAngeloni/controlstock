@@ -25,6 +25,8 @@ namespace ControlStockWFormsApp
 
             Utils.DAOProducto.obtenerListaProductos();
 
+			Utils.DAOProveedor.obtenerProveedores();
+
             comboBox1.DataSource = Utils.DAOMarca.marcas;
             comboBox1.DisplayMember = "nombre";
             comboBox1.ValueMember = "id";
@@ -34,7 +36,11 @@ namespace ControlStockWFormsApp
             comboBox2.DisplayMember = "color";
             comboBox2.ValueMember = "id";
 
-            checkBox1.Checked = true;
+			comboBox2.DataSource = Utils.DAOProveedor.proveedores;
+			comboBox2.DisplayMember = "nombre";
+			comboBox2.ValueMember = "id";
+
+			checkBox1.Checked = true;
 
             button1.BackColor = System.Drawing.Color.FromArgb(198, 216, 175); //verde manzan
             button2.BackColor = System.Drawing.Color.FromArgb(198, 216, 175); //verde manzana
@@ -44,7 +50,6 @@ namespace ControlStockWFormsApp
             this.Width = 400;
             this.Height = 500;
             this.StartPosition = FormStartPosition.CenterScreen; //form en el centro de la pantalla
-
         }
 
 		public string generarCodigoProducto() {

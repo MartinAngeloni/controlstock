@@ -44,6 +44,10 @@ namespace ControlStockWFormsApp.Utils
             sqaProdXProveedor.Fill(prodXProveedor);
         }
 
+		public static void crearProveedor() {
+
+		}
+
         public static void agregarProveedorAlProducto()
         {
 

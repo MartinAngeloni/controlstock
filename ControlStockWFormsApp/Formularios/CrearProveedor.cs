@@ -29,5 +29,57 @@ namespace ControlStockWFormsApp.Formularios
         {
 
         }
-    }
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			if ("".Equals(textBox1.Text))
+			{
+				MessageBox.Show("Ingrese Un Nombre");
+			}
+			else if ("".Equals(textBox2.Text))
+			{
+				MessageBox.Show("Ingrese Cuit");
+			}
+			else if ("".Equals(textBox3.Text))
+			{
+				MessageBox.Show("Ingrese Cbu");
+			}
+			else if ("".Equals(textBox4.Text))
+			{
+				MessageBox.Show("Ingrese Direccion");
+			}
+			else if ("".Equals(textBox5.Text))
+			{
+				MessageBox.Show("Ingrese Telefono");
+			}
+			else if ("".Equals(textBox6.Text))
+			{
+				MessageBox.Show("Ingrese Web");
+			}
+			else
+			{
+				DataRow proveedor = Utils.DAOProveedor.proveedores.NewRow();
+				//Creo el producto
+				proveedor[1] = textBox1.Text;
+				proveedor[2] = textBox2.Text;
+				proveedor[3] = textBox3.Text;
+				proveedor[4] = textBox4.Text;
+				proveedor[5] = textBox5.Text;
+				proveedor[6] = textBox6.Text;
+				Utils.DAOProveedor.proveedores.Rows.Add(proveedor);
+				Utils.DAOProveedor.crearProveedor();
+				Dispose();
+			}
+		}
+
+		private void label5_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			Dispose();
+		}
+	}
 }
