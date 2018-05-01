@@ -74,13 +74,38 @@ namespace ControlStockWFormsApp.Formularios
             textStock.Text = prodXM["stock"].ToString();
             textStock.Enabled = false; //desactivamos el stock
             textBox1.Text = prodXM["alerta_stock"].ToString();
+
+            Utils.DAOProveedor.obtenerProdXProveedor();
+
+            List<int> listaIdProv = new List<int>();
+
+            foreach (DataRow dr in Utils.DAOProveedor.prodXProveedor.Rows) {
+                if (Convert.ToInt32(dr[1]) == idProdxm) {
+                    listaIdProv.Add(Convert.ToInt32(dr[2]));
+                }
+            }
+
+            foreach (int proveed in listaIdProv)
+            {
+                foreach (DataRow dr in Utils.DAOProveedor.proveedores.Rows)
+                {
+                    if (Convert.ToInt32(dr[0]) == proveed)
+                    {
+                        listBox1.Items.Add(dr[1].ToString());
+                        break;
+                    }
+                }
+            }
+
         }
 
 
 
         private void EditarProducto_Load(object sender, EventArgs e)
         {
+            
 
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -145,6 +170,10 @@ namespace ControlStockWFormsApp.Formularios
             else if (Utils.DAOMarca.marcas.Rows.Count < 1)
             {
                 MessageBox.Show("Cargue marcas desde el menu principal");
+            }
+            else if (listBox1.Items.Count < 1)
+            {
+                MessageBox.Show("Por favor agregue al menos un proveedor");
             }
             else
             {

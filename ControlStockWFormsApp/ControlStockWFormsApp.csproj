@@ -69,6 +69,12 @@
     <Compile Include="EdicionProducto.Designer.cs">
       <DependentUpon>EdicionProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\ActualizarPrecio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ActualizarPrecio.Designer.cs">
+      <DependentUpon>ActualizarPrecio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Color.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,6 +197,9 @@
     </Compile>
     <EmbeddedResource Include="EdicionProducto.resx">
       <DependentUpon>EdicionProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ActualizarPrecio.resx">
+      <DependentUpon>ActualizarPrecio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Color.resx">
       <DependentUpon>Color.cs</DependentUpon>

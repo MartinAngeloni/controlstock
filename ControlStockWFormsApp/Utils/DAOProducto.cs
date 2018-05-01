@@ -134,19 +134,20 @@ namespace ControlStockWFormsApp.Utils
 
         public static void actualizarPrecioProducto(string codigo, float porcentaje)
         {
-            string query = @"select stock from ProXm where codigo = '" + codigo + "'";
+            Variables.conexion.Open();
+            string query = @"select precio from ProXm where codigo = '" + codigo + "'";
             SqlCommand cm = new SqlCommand(query, Utils.Variables.conexion);
             SqlDataReader drr = cm.ExecuteReader();
             drr.Read();
             float precio = float.Parse(drr[0].ToString());
             drr.Close();
 
-            String sqlped = "UPDATE ProXm Set stock = @pre where codigo = '" + codigo + "'";
+            String sqlped = "UPDATE ProXm Set precio = @pre where codigo = '" + codigo + "'";
             SqlCommand cmd = new SqlCommand(sqlped, Variables.conexion);
             cmd.Parameters.AddWithValue("@pre", precio + (precio*(porcentaje/100)));
             cmd.CommandType = CommandType.Text;
             cmd.ExecuteNonQuery();
-
+            Variables.conexion.Close();
 
         }
 

@@ -21,9 +21,11 @@ namespace ControlStockWFormsApp.Utils
 		public static string prodXMFileName = "ProdXM.bup";
 		public static string prodXVentaFileName = "ProdXVenta.bup";
 		public static string prodXPedidoFileName = "prodXPedido.bup";
+        public static string proveedor = "proveedor.bup";
+        public static string prodXProveedor = "prodXProveedor.bup";
 
 
-		public static Boolean typeError = false;
+        public static Boolean typeError = false;
 		public static Boolean error = false;
 
 		/*
@@ -91,7 +93,7 @@ namespace ControlStockWFormsApp.Utils
 		}
 
 		public static Boolean checkFiles() {
-			return (File.Exists(@globalDirectory + @colorFileName) && File.Exists(@globalDirectory + @marcaFileName) && File.Exists(@globalDirectory + @productoFileName) && File.Exists(@globalDirectory + @usuarioFileName) && File.Exists(@globalDirectory + @pedidoFileName) && File.Exists(@globalDirectory + @ventaFileName) && File.Exists(@globalDirectory + @prodXMFileName) && File.Exists(@globalDirectory + @prodXVentaFileName) && File.Exists(@globalDirectory + @prodXPedidoFileName));
+			return (File.Exists(@globalDirectory + @colorFileName) && File.Exists(@globalDirectory + @marcaFileName) && File.Exists(@globalDirectory + @productoFileName) && File.Exists(@globalDirectory + @usuarioFileName) && File.Exists(@globalDirectory + @pedidoFileName) && File.Exists(@globalDirectory + @ventaFileName) && File.Exists(@globalDirectory + @prodXMFileName) && File.Exists(@globalDirectory + @prodXVentaFileName) && File.Exists(@globalDirectory + @prodXPedidoFileName) && File.Exists(@globalDirectory + @prodXProveedor) && File.Exists(@globalDirectory + @proveedor));
 		}
 
 
@@ -135,7 +137,15 @@ namespace ControlStockWFormsApp.Utils
 				{
 					fullBackUpProdXPedido();
 				}
-			}
+                if (!File.Exists(@globalDirectory + @proveedor))
+                {
+                    fullBackUpProveedor();
+                }
+                if (!File.Exists(@globalDirectory + @prodXProveedor))
+                {
+                    fullBackUpProdXProveedor();
+                }
+            }
 			else {
 				throw new Exception();
 			}
@@ -227,9 +237,32 @@ namespace ControlStockWFormsApp.Utils
 			}
 		}
 
+        public static void fullBackUpProveedor()
+        {
+            SqlConnection conexion = new SqlConnection(Variables.conectionString);
+            SqlDataAdapter sqa = new SqlDataAdapter("Select * from Proveedor", conexion);
+            DataTable dt = new DataTable();
+            sqa.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                backupProveedor(int.Parse(dr[0].ToString()), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), dr[7].ToString());
+            }
+        }
+        public static void fullBackUpProdXProveedor()
+        {
+            SqlConnection conexion = new SqlConnection(Variables.conectionString);
+            SqlDataAdapter sqa = new SqlDataAdapter("Select * from ProdXProveedor", conexion);
+            DataTable dt = new DataTable();
+            sqa.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                backupProdXProveedor(int.Parse(dr[0].ToString()), int.Parse(dr[1].ToString()), int.Parse(dr[2].ToString()));
+            }
+        }
 
-		//BackupColor
-		public static void backupInsertColor(int id, string color)
+
+        //BackupColor
+        public static void backupInsertColor(int id, string color)
 		{
 			String insert = "Insert into Color (id,color) values (" + id + ",'" + color + "');" + System.Environment.NewLine;
 			File.AppendAllText(@globalDirectory + @colorFileName, insert);
@@ -317,7 +350,20 @@ namespace ControlStockWFormsApp.Utils
 			String insert = "Insert into ProdXPedido (id,id_producto,id_pedido,cantidad,precio) values (" + id + ",'" + idProd + "'," + idPed + "," + cant + "," + precio.ToString().Replace(",", ".") + ");" + System.Environment.NewLine;
 			File.AppendAllText(@globalDirectory + @prodXPedidoFileName, insert);
 		}
-		public static void backupDeleteProdXPedido(int id)
+        //BackUpProveedor
+        public static void backupProveedor(int id, string nombre, string cuit, string cbu, string direccion, string telefono, string correo, string pagina)
+        {
+            String insert = "Insert into Proveedor (id,nombre,cuit,cbu,direccion,telefono,correo,pagina) values (" + id + ",'" + nombre + "','" + cuit + "','" + cbu + "','" + direccion + "','" + telefono + "','" + correo + "','" + pagina + "')" + System.Environment.NewLine;
+            File.AppendAllText(@globalDirectory + @prodXPedidoFileName, insert);
+        }
+        public static void backupProdXProveedor(int id, int idProd, int idProv)
+        {
+            String insert = "Insert into ProdXProveedor (id,id_producto,id_proveedor) values (" + id + "," + idProd + "," + idProv + ");" + System.Environment.NewLine;
+            File.AppendAllText(@globalDirectory + @prodXPedidoFileName, insert);
+        }
+
+
+        public static void backupDeleteProdXPedido(int id)
 		{
 			String delete = "Delete from ProdXPedido where id=" + id + ";" + System.Environment.NewLine;
 			File.AppendAllText(@globalDirectory + @prodXPedidoFileName, delete);

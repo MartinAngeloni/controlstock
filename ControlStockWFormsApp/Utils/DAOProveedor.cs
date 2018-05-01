@@ -15,7 +15,7 @@ namespace ControlStockWFormsApp.Utils
 
         public static SqlDataAdapter sqaProdXProveedor = new SqlDataAdapter("Select * from ProdXProveedor", Variables.conexion);
 
-        public static SqlDataAdapter sqaListaProductosConProveedor = new SqlDataAdapter("select * from Proveedor p inner join ProdXProveedor pp on p.id = pp.id_proveedor inner join ProdXM pm on pp.id_producto = pm.id inner join Producto pr on pr.id = pm.id_producto", Variables.conexion);
+        public static SqlDataAdapter sqaListaProductosConProveedor = new SqlDataAdapter("select pm.codigo,pr.Nombre,pr.Modelo,m.nombre,c.color,pm.precio,p.nombre from Proveedor p inner join ProdXProveedor pp on p.id = pp.id_proveedor inner join ProXm pm on pp.id_producto = pm.id inner join Producto pr on pr.Cod_Producto = pm.id_producto inner join color c on pm.id_color = c.id inner join marca m on m.id = pm.id_marca", Variables.conexion);
 
         public static DataTable proveedores;
 

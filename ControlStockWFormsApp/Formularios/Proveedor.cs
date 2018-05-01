@@ -74,5 +74,11 @@ namespace ControlStockWFormsApp.Formularios
                 crearProveedor.ShowDialog();
             }
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ActualizarPrecio ac = new ActualizarPrecio();
+            ac.ShowDialog();
+        }
     }
 }

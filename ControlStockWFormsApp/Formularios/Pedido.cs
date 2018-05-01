@@ -18,11 +18,14 @@ namespace ControlStockWFormsApp
         {
             InitializeComponent();
 			Utils.DAOProducto.obtenerProductos();
-			Utils.DAOPedido.obtenerPedido();
+            Utils.DAOProducto.obtenerProXm();
+            Utils.DAOPedido.obtenerPedido();
 			Utils.DAOPedido.obtenerProdXPedido();
 			Utils.DAOPedido.initRealizandoPedido();
+            Utils.DAOProveedor.obtenerProdXProveedor();
+            Utils.DAOProveedor.obtenerProveedores();
 
-			initDt();
+            initDt();
 			dataGridView1.DataSource = Utils.DAOPedido.realizandoPedido;
 
             button1.BackColor = System.Drawing.Color.FromArgb(198, 216, 175); //verde manzan
@@ -157,17 +160,17 @@ namespace ControlStockWFormsApp
 					dr[1] = prod["Nombre"];
 					dr[2] = prod["Marca"];
 					dr[3] = prod["Modelo"];
-                    dr[4] = textBox4.Text;
+                    dr[4] = comboBox1.Text;
 					dr[5] = Int32.Parse(textBox2.Text);
 					dr[6] = float.Parse(textBox3.Text);
 					realizandoPedido.Rows.Add(dr);
 
-					Utils.DAOPedido.agregarProductoAlPedido(prod["Codigo"].ToString(), prod["Nombre"].ToString(), prod["Marca"].ToString(), prod["Modelo"].ToString(), textBox4.Text + " ", Int32.Parse(textBox2.Text), float.Parse(textBox3.Text), "-");
+					Utils.DAOPedido.agregarProductoAlPedido(prod["Codigo"].ToString(), prod["Nombre"].ToString(), prod["Marca"].ToString(), prod["Modelo"].ToString(), comboBox1.Text + " ", Int32.Parse(textBox2.Text), float.Parse(textBox3.Text), "-");
 					dataGridView1.DataSource = realizandoPedido;
                     textBox1.Text = "";
                     textBox2.Text = "";
                     textBox3.Text = "";
-                    textBox4.Text = "";
+                    comboBox1.Text = "";
                 }
 				else {
 					MessageBox.Show("Producto no existe");
@@ -247,6 +250,49 @@ namespace ControlStockWFormsApp
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            comboBox1.Items.Clear();
+            comboBox1.Text = "";
+            if (!textBox1.Text.Equals(""))
+            {
+                int id = 0;
+                foreach (DataRow dr in Utils.DAOProducto.proxm.Rows) {
+                    if (dr[6].ToString().Equals(textBox1.Text)) {
+                        id = Convert.ToInt32(dr[0]);
+                    }
+                }
+                if (id > 0) { 
+                List<int> listaIdProv = new List<int>();
+                foreach (DataRow dr in Utils.DAOProveedor.prodXProveedor.Rows)
+                {
+                    if (Convert.ToInt32(dr[1]) == id)
+                    {
+                        listaIdProv.Add(Convert.ToInt32(dr[2]));
+                    }
+                }
+
+                foreach (int proveed in listaIdProv)
+                {
+                    foreach (DataRow dr in Utils.DAOProveedor.proveedores.Rows)
+                    {
+                        if (Convert.ToInt32(dr[0]) == proveed)
+                        {
+                            comboBox1.Items.Add(dr[1].ToString());
+                                comboBox1.Text = dr[1].ToString();
+                            break;
+                        }
+                    }
+                }
+                }
+            }
         }
     }
 }
