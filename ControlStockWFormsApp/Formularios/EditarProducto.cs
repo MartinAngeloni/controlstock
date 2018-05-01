@@ -28,6 +28,8 @@ namespace ControlStockWFormsApp.Formularios
 
             Utils.DAOProducto.obtenerProXm();
 
+            Utils.DAOProveedor.obtenerProveedores();
+
             Utils.DAOProducto.obtenerListaProductos();
 
             comboBox1.DataSource = Utils.DAOMarca.marcas;
@@ -38,6 +40,12 @@ namespace ControlStockWFormsApp.Formularios
             comboBox2.DataSource = Utils.DAOColor.colores;
             comboBox2.DisplayMember = "color";
             comboBox2.ValueMember = "id";
+
+
+            comboBox3.DataSource = Utils.DAOProveedor.proveedores;
+            comboBox3.DisplayMember = "nombre";
+            comboBox3.ValueMember = "id";
+
 
             button1.BackColor = System.Drawing.Color.FromArgb(198, 216, 175); //verde manzan
             button2.BackColor = System.Drawing.Color.FromArgb(198, 216, 175); //verde manzana
@@ -78,6 +86,33 @@ namespace ControlStockWFormsApp.Formularios
         private void button1_Click(object sender, EventArgs e)
         {
 
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //permite solo numeros enteros
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back))
+            { e.Handled = true; }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
 
             if ("".Equals(textNombre.Text))
             {
@@ -126,7 +161,7 @@ namespace ControlStockWFormsApp.Formularios
                     }
                 }
                 Utils.DAOProducto.actualizarListaProducto();
-
+                int id = 0;
 
                 //Cargo la edicion del producto
                 //Utils.DAOProducto.proxm.Rows.Remove(prodXM);
@@ -134,6 +169,7 @@ namespace ControlStockWFormsApp.Formularios
                 {
                     if (int.Parse(dr["id"].ToString()) == idProdXM)
                     {
+                        id = Convert.ToInt32(dr[0]);
                         dr[1] = Convert.ToInt32(comboBox1.SelectedValue);
                         dr[2] = Int32.Parse(producto["Cod_Producto"].ToString());
                         dr[3] = Convert.ToDouble(textPrecio.Text); //revisar esta falla, el precio es float
@@ -148,6 +184,31 @@ namespace ControlStockWFormsApp.Formularios
                 Utils.DAOProducto.crearProducto();
                 Utils.DAOProducto.obtenerProductos();
                 Program.main.actualizarAlerta(); //actualizamos el stock
+
+                //quitan proveedores viejos
+                Utils.Variables.conexion.Open();
+                String sqlrxv = "delete from ProdXProveedor where id_producto = " + id;
+                SqlCommand cmd1 = new SqlCommand(sqlrxv, Utils.Variables.conexion);
+                cmd1.CommandType = CommandType.Text;
+                cmd1.ExecuteNonQuery();
+                Utils.Variables.conexion.Close();
+
+                // Agregando el proveedor
+                Utils.DAOProveedor.obtenerProdXProveedor();
+                for (int x = 0; x < listBox1.Items.Count; x++)
+                {
+                    DataRow dp = Utils.DAOProveedor.prodXProveedor.NewRow();
+                    dp[1] = id;
+                    foreach (DataRow proveedor in Utils.DAOProveedor.proveedores.Rows)
+                    {
+                        if (proveedor[1].ToString().Equals(listBox1.Items[x].ToString()))
+                        {
+                            dp[2] = proveedor[0];
+                        }
+                    }
+                    Utils.DAOProveedor.prodXProveedor.Rows.Add(dp);
+                }
+                Utils.DAOProveedor.crearProdXProveedor();
                 Dispose();
             }
 
@@ -155,26 +216,25 @@ namespace ControlStockWFormsApp.Formularios
 
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-
+            if (!listBox1.Items.Contains(comboBox3.Text.ToString()))
+            {
+                listBox1.Items.Add(comboBox3.Text.ToString());
+            }
         }
 
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-            //permite solo numeros enteros
-            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back))
-            { e.Handled = true; }
+            if (listBox1.SelectedIndex >= 0)
+            {
+                listBox1.Items.RemoveAt(listBox1.SelectedIndex);
+            }
         }
     }
 }

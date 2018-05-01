@@ -38,19 +38,10 @@ namespace ControlStockWFormsApp.Utils
             sqaListaProductosConProveedor.Fill(listaProductoConProveedor);
         }
 
-        public static void obtenerProdXPedido()
+        public static void obtenerProdXProveedor()
         {
             prodXProveedor = new DataTable();
             sqaProdXProveedor.Fill(prodXProveedor);
-        }
-
-		public static void crearProveedor() {
-
-		}
-
-        public static void agregarProveedorAlProducto()
-        {
-
         }
 
         public static void quitarProveedorAlProducto()
@@ -58,18 +49,39 @@ namespace ControlStockWFormsApp.Utils
 
         }
 
-        public static void actualizarPrecioAlProducto()
+        public static void actualizarPrecioAlProducto(int producto, float porcentaje)
         {
 
         }
 
-        public static void CrearProveedor()
+        public static void eliminarProveedor(int codigo)
+        {
+           
+            try
+            {
+                Variables.conexion.Open();
+                String sqlped = "Delete from Proveedor where id = " + codigo.ToString();
+                SqlCommand cmd = new SqlCommand(sqlped, Variables.conexion);
+                cmd.CommandType = CommandType.Text;
+                cmd.ExecuteNonQuery();
+            }
+            catch (SqlException e)
+            {
+                error = true;
+            }
+            finally
+            {
+                Variables.conexion.Close();
+            }
+        }
+
+        public static void crearProveedor()
         {
             new SqlCommandBuilder(sqaProveedor);
             sqaProveedor.Update(proveedores);
         }
 
-        public static void CrearProdXProveedor()
+        public static void crearProdXProveedor()
         {
             new SqlCommandBuilder(sqaProdXProveedor);
             sqaProdXProveedor.Update(prodXProveedor);

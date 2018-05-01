@@ -36,9 +36,9 @@ namespace ControlStockWFormsApp
             comboBox2.DisplayMember = "color";
             comboBox2.ValueMember = "id";
 
-			comboBox2.DataSource = Utils.DAOProveedor.proveedores;
-			comboBox2.DisplayMember = "nombre";
-			comboBox2.ValueMember = "id";
+			comboBox3.DataSource = Utils.DAOProveedor.proveedores;
+			comboBox3.DisplayMember = "nombre";
+			comboBox3.ValueMember = "id";
 
 			checkBox1.Checked = true;
 
@@ -93,7 +93,13 @@ namespace ControlStockWFormsApp
 			{
 				MessageBox.Show("El Codigo de producto ya existe, elija otro");
 			}
-			else { 
+            else if (listBox1.Items.Count<1)
+            {
+                MessageBox.Show("Por favor agregue al menos un proveedor");
+            }
+            else {
+
+
 
                 DataRow producto = Utils.DAOProducto.listaProducto.NewRow();
                 //Creo el producto
@@ -135,6 +141,23 @@ namespace ControlStockWFormsApp
                 Utils.DAOProducto.crearProducto();
                 Utils.DAOProducto.obtenerProductos();
                 Program.main.actualizarAlerta(); //actualizamos el sto
+
+                // Agregando el proveedor
+                Utils.DAOProveedor.obtenerProdXProveedor();
+                for (int x = 0; x < listBox1.Items.Count; x++)
+                {
+                    DataRow dp = Utils.DAOProveedor.prodXProveedor.NewRow();
+                    dp[1] = id;
+                    foreach (DataRow proveedor in Utils.DAOProveedor.proveedores.Rows)
+                    {
+                        if (proveedor[1].ToString().Equals(listBox1.Items[x].ToString()))
+                        {
+                            dp[2] = proveedor[0];
+                        }
+                    }
+                    Utils.DAOProveedor.prodXProveedor.Rows.Add(dp);
+                }
+                Utils.DAOProveedor.crearProdXProveedor();
                 Dispose();
             }
         }
@@ -229,7 +252,17 @@ namespace ControlStockWFormsApp
 
         private void button4_Click(object sender, EventArgs e)
         {
+            if (listBox1.SelectedIndex >= 0){
+                listBox1.Items.RemoveAt(listBox1.SelectedIndex);
+            }
+        }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (!listBox1.Items.Contains(comboBox3.Text.ToString()))
+            {
+                listBox1.Items.Add(comboBox3.Text.ToString());
+            }
         }
     }
 }

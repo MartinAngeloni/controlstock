@@ -12,17 +12,36 @@ namespace ControlStockWFormsApp.Formularios
 {
     public partial class CrearProveedor : Form
     {
+
+        public int id = 0;
+        private DataRow prov = null;
         public CrearProveedor()
         {
             InitializeComponent();
-
+            
             this.Width = 600;
             this.Height = 500;
         }
 
         private void CrearProveedor_Load(object sender, EventArgs e)
         {
-
+            if (id > 0)
+            {
+                this.Name = "Editar Proveedor";
+                foreach (DataRow proveedor in Utils.DAOProveedor.proveedores.Rows)
+                {
+                    if (Convert.ToInt32(proveedor[0]) == id)
+                    {
+                        textBox1.Text = proveedor[1].ToString();
+                        textBox2.Text = proveedor[2].ToString();
+                        textBox3.Text = proveedor[3].ToString();
+                        textBox4.Text = proveedor[4].ToString();
+                        textBox5.Text = proveedor[5].ToString();
+                        textBox6.Text = proveedor[7].ToString();
+                        prov = proveedor;
+                    }
+                }
+            }
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -58,15 +77,26 @@ namespace ControlStockWFormsApp.Formularios
 			}
 			else
 			{
-				DataRow proveedor = Utils.DAOProveedor.proveedores.NewRow();
-				//Creo el producto
-				proveedor[1] = textBox1.Text;
-				proveedor[2] = textBox2.Text;
-				proveedor[3] = textBox3.Text;
-				proveedor[4] = textBox4.Text;
-				proveedor[5] = textBox5.Text;
-				proveedor[6] = textBox6.Text;
-				Utils.DAOProveedor.proveedores.Rows.Add(proveedor);
+                if (id > 0)
+                {
+                    prov[1] = textBox1.Text;
+                    prov[2] = textBox2.Text;
+                    prov[3] = textBox3.Text;
+                    prov[4] = textBox4.Text;
+                    prov[5] = textBox5.Text;
+                    prov[7] = textBox6.Text;
+                } else
+                {
+                    DataRow proveedor = Utils.DAOProveedor.proveedores.NewRow();
+                    //Creo el producto
+                    proveedor[1] = textBox1.Text;
+                    proveedor[2] = textBox2.Text;
+                    proveedor[3] = textBox3.Text;
+                    proveedor[4] = textBox4.Text;
+                    proveedor[5] = textBox5.Text;
+                    proveedor[7] = textBox6.Text;
+                    Utils.DAOProveedor.proveedores.Rows.Add(proveedor);
+                }
 				Utils.DAOProveedor.crearProveedor();
 				Dispose();
 			}
