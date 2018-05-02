@@ -11,7 +11,7 @@ namespace ControlStockWFormsApp.Utils
     class DAOProveedor
     {
 
-        public static SqlDataAdapter sqaProveedor = new SqlDataAdapter("Select * from Proveedor", Variables.conexion);
+        public static SqlDataAdapter sqaProveedor = new SqlDataAdapter("Select id as ID, nombre as Nombre, cuit as CUIT, cbu as CBU, direccion as Direccion, telefono as Telefono, correo as CorreoElectronico, pagina as Pagina from Proveedor", Variables.conexion);
 
         public static SqlDataAdapter sqaProdXProveedor = new SqlDataAdapter("Select * from ProdXProveedor", Variables.conexion);
 

@@ -47,8 +47,8 @@ namespace ControlStockWFormsApp
 
             textStock.Enabled = false;
 
-            this.Width = 400;
-            this.Height = 500;
+            this.Width = 450;
+            this.Height = 550;
             this.StartPosition = FormStartPosition.CenterScreen; //form en el centro de la pantalla
         }
 

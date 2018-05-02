@@ -18,9 +18,11 @@ namespace ControlStockWFormsApp.Formularios
         public CrearProveedor()
         {
             InitializeComponent();
+
+            textBox1.SelectionStart=0;
             
-            this.Width = 600;
-            this.Height = 500;
+            this.Width = 750;
+            this.Height = 400;
         }
 
         private void CrearProveedor_Load(object sender, EventArgs e)
@@ -37,6 +39,7 @@ namespace ControlStockWFormsApp.Formularios
                         textBox3.Text = proveedor[3].ToString();
                         textBox4.Text = proveedor[4].ToString();
                         textBox5.Text = proveedor[5].ToString();
+                        textBox7.Text = proveedor[6].ToString(); //martin
                         textBox6.Text = proveedor[7].ToString();
                         prov = proveedor;
                     }
@@ -84,6 +87,7 @@ namespace ControlStockWFormsApp.Formularios
                     prov[3] = textBox3.Text;
                     prov[4] = textBox4.Text;
                     prov[5] = textBox5.Text;
+                    prov[6] = textBox7.Text; //martin
                     prov[7] = textBox6.Text;
                 } else
                 {
@@ -94,6 +98,7 @@ namespace ControlStockWFormsApp.Formularios
                     proveedor[3] = textBox3.Text;
                     proveedor[4] = textBox4.Text;
                     proveedor[5] = textBox5.Text;
+                    proveedor[6] = textBox7.Text; //martin
                     proveedor[7] = textBox6.Text;
                     Utils.DAOProveedor.proveedores.Rows.Add(proveedor);
                 }
@@ -111,5 +116,32 @@ namespace ControlStockWFormsApp.Formularios
 		{
 			Dispose();
 		}
-	}
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+    }
 }

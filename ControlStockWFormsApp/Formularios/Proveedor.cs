@@ -20,6 +20,7 @@ namespace ControlStockWFormsApp.Formularios
 
             dataGridView1.DataSource = Utils.DAOProveedor.proveedores;
 
+            this.dataGridView1.Columns["id"].Visible = false;
 
             this.Width = 1000;
             this.Height = 600;
@@ -79,6 +80,15 @@ namespace ControlStockWFormsApp.Formularios
         {
             ActualizarPrecio ac = new ActualizarPrecio();
             ac.ShowDialog();
+        }
+
+        //busqueda de dataGridView
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            //sintaxis para busqueda en dataGridView
+            DataView dataView = Utils.DAOProveedor.proveedores.DefaultView;
+            dataView.RowFilter = string.Format("nombre like '%{0}%' or cuit like '%{0}%' or cbu like '%{0}%' or direccion like '%{0}%' or telefono like '%{0}%' or correo like '%{0}%' or pagina like '%{0}%'", textBox1.Text); //busqueda por nombre o marca
+            dataGridView1.DataSource = dataView;
         }
     }
 }
