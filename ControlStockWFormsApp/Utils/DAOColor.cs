@@ -12,7 +12,7 @@ namespace ControlStockWFormsApp.Utils
     {
         public static bool error = false;
 
-        public static SqlDataAdapter sqaColor = new SqlDataAdapter("Select * from Color ", Variables.conexion);
+        public static SqlDataAdapter sqaColor = new SqlDataAdapter("Select id as ID, color as Color from Color ", Variables.conexion);
 
 
         public static DataTable colores = new DataTable();

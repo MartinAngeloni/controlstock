@@ -127,7 +127,7 @@
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(412, 38);
-            this.textBox1.TabIndex = 4;
+            this.textBox1.TabIndex = 0;
             // 
             // textBox2
             // 
@@ -136,7 +136,7 @@
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(412, 38);
-            this.textBox2.TabIndex = 5;
+            this.textBox2.TabIndex = 1;
             this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // textBox3
@@ -146,7 +146,7 @@
             this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(412, 38);
-            this.textBox3.TabIndex = 6;
+            this.textBox3.TabIndex = 2;
             this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             // 
             // textBox4
@@ -156,7 +156,7 @@
             this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(412, 38);
-            this.textBox4.TabIndex = 7;
+            this.textBox4.TabIndex = 3;
             // 
             // label4
             // 
@@ -187,7 +187,7 @@
             this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(412, 38);
-            this.textBox5.TabIndex = 0;
+            this.textBox5.TabIndex = 4;
             this.textBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox5_KeyPress);
             // 
             // textBox6
@@ -197,7 +197,7 @@
             this.textBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(412, 38);
-            this.textBox6.TabIndex = 1;
+            this.textBox6.TabIndex = 5;
             // 
             // label5
             // 
@@ -240,7 +240,7 @@
             this.textBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(412, 38);
-            this.textBox7.TabIndex = 2;
+            this.textBox7.TabIndex = 6;
             // 
             // button2
             // 
@@ -283,7 +283,7 @@
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(415, 72);
-            this.button1.TabIndex = 3;
+            this.button1.TabIndex = 7;
             this.button1.Text = "Guardar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);

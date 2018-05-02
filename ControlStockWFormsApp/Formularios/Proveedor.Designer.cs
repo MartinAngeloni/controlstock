@@ -174,6 +174,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1462, 820);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.TabStop = false;
             // 
             // tableLayoutPanel3
             // 
@@ -267,7 +268,7 @@
             this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(424, 86);
-            this.button4.TabIndex = 3;
+            this.button4.TabIndex = 4;
             this.button4.Text = "Salir";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -320,7 +321,7 @@
             this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(424, 86);
-            this.button5.TabIndex = 8;
+            this.button5.TabIndex = 3;
             this.button5.Text = "Actualizar Precios";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
@@ -364,7 +365,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.78378F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.21622F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(1462, 120);
-            this.tableLayoutPanel4.TabIndex = 2;
+            this.tableLayoutPanel4.TabIndex = 0;
             // 
             // label2
             // 
@@ -385,7 +386,7 @@
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(1296, 38);
-            this.textBox1.TabIndex = 1;
+            this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Proveedor

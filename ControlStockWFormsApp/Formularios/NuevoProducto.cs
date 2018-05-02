@@ -28,7 +28,7 @@ namespace ControlStockWFormsApp
 			Utils.DAOProveedor.obtenerProveedores();
 
             comboBox1.DataSource = Utils.DAOMarca.marcas;
-            comboBox1.DisplayMember = "nombre";
+            comboBox1.DisplayMember = "marca"; //martin
             comboBox1.ValueMember = "id";
 
 

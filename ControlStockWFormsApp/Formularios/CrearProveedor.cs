@@ -19,7 +19,7 @@ namespace ControlStockWFormsApp.Formularios
         {
             InitializeComponent();
 
-            textBox1.SelectionStart=0;
+            
             
             this.Width = 750;
             this.Height = 400;

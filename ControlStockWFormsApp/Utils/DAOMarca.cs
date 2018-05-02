@@ -13,7 +13,7 @@ namespace ControlStockWFormsApp.Utils
 
         public static bool error = false;
 
-        public static SqlDataAdapter sqaMarca = new SqlDataAdapter("Select * from Marca ", Variables.conexion);
+        public static SqlDataAdapter sqaMarca = new SqlDataAdapter("Select id as ID, nombre as Marca from Marca ", Variables.conexion);
 
         public static DataTable marcas = new DataTable();
 

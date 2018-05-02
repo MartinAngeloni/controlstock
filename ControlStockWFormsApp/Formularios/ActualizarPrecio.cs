@@ -162,5 +162,7 @@ namespace ControlStockWFormsApp.Formularios
         {
 
         }
+
+        
     }
 }

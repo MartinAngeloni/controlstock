@@ -430,7 +430,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(1513, 142);
-            this.tableLayoutPanel5.TabIndex = 9;
+            this.tableLayoutPanel5.TabIndex = 0;
             this.tableLayoutPanel5.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel5_Paint);
             // 
             // textBox2
@@ -519,7 +519,7 @@
             this.comboBox1.Location = new System.Drawing.Point(1137, 68);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(373, 39);
-            this.comboBox1.TabIndex = 5;
+            this.comboBox1.TabIndex = 3;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Pedido
