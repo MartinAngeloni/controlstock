@@ -141,10 +141,10 @@ namespace ControlStockWFormsApp.Utils
             drr.Read();
             float precio = float.Parse(drr[0].ToString());
             drr.Close();
-
+			precio = (float) Math.Round(precio + (precio * (porcentaje / 100)), 2);
             String sqlped = "UPDATE ProXm Set precio = @pre where codigo = '" + codigo + "'";
             SqlCommand cmd = new SqlCommand(sqlped, Variables.conexion);
-            cmd.Parameters.AddWithValue("@pre", precio + (precio*(porcentaje/100)));
+            cmd.Parameters.AddWithValue("@pre", precio);
             cmd.CommandType = CommandType.Text;
             cmd.ExecuteNonQuery();
             Variables.conexion.Close();
