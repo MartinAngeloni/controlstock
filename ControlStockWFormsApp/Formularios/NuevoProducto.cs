@@ -45,7 +45,7 @@ namespace ControlStockWFormsApp
             button1.BackColor = System.Drawing.Color.FromArgb(198, 216, 175); //verde manzan
             button2.BackColor = System.Drawing.Color.FromArgb(198, 216, 175); //verde manzana
 
-            textStock.Enabled = false;
+            
 
             this.Width = 450;
             this.Height = 550;
@@ -76,6 +76,18 @@ namespace ControlStockWFormsApp
             else if ("".Equals(textDescripcion.Text))
             {
                 MessageBox.Show("Ingrese una descripcion");
+            }
+            else if ("".Equals(textStock.Text))
+            {
+                MessageBox.Show("Ingrese un porcentaje de descuento del precio al contado");
+            }
+            else if ("".Equals(textBox2.Text))
+            {
+                MessageBox.Show("Ingrese un porcentaje de aumento del precio de lista");
+            }
+            else if ("".Equals(textBox3.Text))
+            {
+                MessageBox.Show("Ingrese un porcentaje de descuento del precio re venta");
             }
             else if ("".Equals(textPrecio.Text))
             {
@@ -137,6 +149,9 @@ namespace ControlStockWFormsApp
 				}
                 
                 proxm[7] = Convert.ToInt32(textBox1.Text);
+                proxm[9] = Convert.ToInt32(textBox2.Text);
+                proxm[10] = Convert.ToInt32(textStock.Text);
+                proxm[11] = Convert.ToInt32(textBox3.Text);
                 Utils.DAOProducto.proxm.Rows.Add(proxm);
                 Utils.DAOProducto.crearProducto();
                 Utils.DAOProducto.obtenerProductos();
@@ -263,6 +278,35 @@ namespace ControlStockWFormsApp
             {
                 listBox1.Items.Add(comboBox3.Text.ToString());
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //solo enteros
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back))
+            { e.Handled = true; }
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //solo enteros
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back))
+            { e.Handled = true; }
         }
     }
 }

@@ -24,7 +24,7 @@ namespace ControlStockWFormsApp
 			Utils.DAOPedido.initRealizandoPedido();
             Utils.DAOProveedor.obtenerProdXProveedor();
             Utils.DAOProveedor.obtenerProveedores();
-
+            textBox3.Enabled = false;
             initDt();
 			dataGridView1.DataSource = Utils.DAOPedido.realizandoPedido;
 
@@ -261,12 +261,14 @@ namespace ControlStockWFormsApp
         {
             comboBox1.Items.Clear();
             comboBox1.Text = "";
+            textBox3.Text = "";
             if (!textBox1.Text.Equals(""))
             {
                 int id = 0;
                 foreach (DataRow dr in Utils.DAOProducto.proxm.Rows) {
                     if (dr[6].ToString().Equals(textBox1.Text)) {
                         id = Convert.ToInt32(dr[0]);
+                        textBox3.Text = dr["precio"].ToString();
                     }
                 }
                 if (id > 0) { 

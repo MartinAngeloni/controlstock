@@ -155,7 +155,7 @@ namespace ControlStockWFormsApp.Utils
 				SqlCommand cmd = new SqlCommand(sqlvent, Variables.conexion);
 				cmd.Parameters.AddWithValue("@desc", venta.Rows[0][2]);
 				cmd.Parameters.AddWithValue("@fecha", venta.Rows[0][1]);
-                cmd.Parameters.AddWithValue("@total", total);
+                cmd.Parameters.AddWithValue("@total", Math.Round(total,2));
                 cmd.Parameters.AddWithValue("@diff", diferencia - total);
 
 

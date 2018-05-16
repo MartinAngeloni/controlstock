@@ -71,8 +71,9 @@ namespace ControlStockWFormsApp.Formularios
             textCodigo.Text = prodXM["codigo"].ToString();
             textCodigo.Enabled = false; //desactivamos el id
             textPrecio.Text = prodXM["precio"].ToString();
-            textStock.Text = prodXM["stock"].ToString();
-            textStock.Enabled = false; //desactivamos el stock
+            textStock.Text = prodXM["precio_contado"].ToString();
+            textBox2.Text = prodXM["precio_lista"].ToString();
+            textBox3.Text = prodXM["precio_re_venta"].ToString();
             textBox1.Text = prodXM["alerta_stock"].ToString();
 
             Utils.DAOProveedor.obtenerProdXProveedor();
@@ -80,8 +81,8 @@ namespace ControlStockWFormsApp.Formularios
             List<int> listaIdProv = new List<int>();
 
             foreach (DataRow dr in Utils.DAOProveedor.prodXProveedor.Rows) {
-                if (Convert.ToInt32(dr[1]) == idProdxm) {
-                    listaIdProv.Add(Convert.ToInt32(dr[2]));
+                if (Convert.ToInt32(dr["id_producto"]) == idProdxm) {
+                    listaIdProv.Add(Convert.ToInt32(dr["id_proveedor"]));
                 }
             }
 
@@ -89,9 +90,9 @@ namespace ControlStockWFormsApp.Formularios
             {
                 foreach (DataRow dr in Utils.DAOProveedor.proveedores.Rows)
                 {
-                    if (Convert.ToInt32(dr[0]) == proveed)
+                    if (Convert.ToInt32(dr["id"]) == proveed)
                     {
-                        listBox1.Items.Add(dr[1].ToString());
+                        listBox1.Items.Add(dr["nombre"].ToString());
                         break;
                     }
                 }
@@ -159,9 +160,17 @@ namespace ControlStockWFormsApp.Formularios
             {
                 MessageBox.Show("Ingrese un precio");
             }
+            else if ("".Equals(textBox2.Text))
+            {
+                MessageBox.Show("Ingrese un precio de lista");
+            }
+            else if ("".Equals(textBox3.Text))
+            {
+                MessageBox.Show("Ingrese un precio de pre venta");
+            }
             else if ("".Equals(textStock.Text))
             {
-                MessageBox.Show("Ingrese un valor de stock disponible");
+                MessageBox.Show("Ingrese un precio de contado");
             }
             else if (Utils.DAOColor.colores.Rows.Count < 1)
             {
@@ -206,6 +215,9 @@ namespace ControlStockWFormsApp.Formularios
                         dr[5] = Convert.ToInt32(textStock.Text);
                         dr[6] = textCodigo.Text;
                         dr[7] = Convert.ToInt32(textBox1.Text);
+                        dr[9] = Convert.ToInt32(textBox2.Text);
+                        dr[10] = Convert.ToInt32(textStock.Text);
+                        dr[11] = Convert.ToInt32(textBox3.Text);
                     }
                 }
 
@@ -264,6 +276,11 @@ namespace ControlStockWFormsApp.Formularios
             {
                 listBox1.Items.RemoveAt(listBox1.SelectedIndex);
             }
+        }
+
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

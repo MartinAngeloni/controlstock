@@ -11,13 +11,13 @@ namespace ControlStockWFormsApp.Utils
     static class DAOProducto
     {
         
-        public static SqlDataAdapter sqaProducto = new SqlDataAdapter("Select I.codigo as Codigo, P.Nombre, M.nombre as Marca, P.Modelo, C.color as Color, I.Precio, I.stock as Stock, I.alerta_stock as AlertaStock, I.id, I.id_producto from Producto P inner join ProXm I on P.Cod_Producto = I.id_producto inner join Marca M on I.id_marca = M.id inner join Color C on I.id_color = C.id where I.baja = 0", Variables.conexion);
+        public static SqlDataAdapter sqaProducto = new SqlDataAdapter("Select I.codigo as Codigo, P.Nombre, M.nombre as Marca, P.Modelo, C.color as Color, ROUND ((I.Precio*(100+I.precio_lista))/100 , 2) as 'Precio lista', ROUND((I.Precio*(100+I.precio_lista-I.precio_contado))/100 , 2) as 'Precio Contado', ROUND ((I.Precio*(100+I.precio_lista-I.precio_re_venta))/100,2) as 'Precio Re Venta', I.stock as Stock, I.alerta_stock as AlertaStock, I.id, I.id_producto from Producto P inner join ProXm I on P.Cod_Producto = I.id_producto inner join Marca M on I.id_marca = M.id inner join Color C on I.id_color = C.id where I.baja = 0", Variables.conexion);
 
         public static SqlDataAdapter sqaProductoBaja = new SqlDataAdapter("Select I.codigo as Codigo, P.Nombre, M.nombre as Marca, P.Modelo, C.color, I.Precio, I.stock, I.alerta_stock, I.id, I.id_producto from Producto P inner join ProXm I on P.Cod_Producto = I.id_producto inner join Marca M on I.id_marca = M.id inner join Color C on I.id_color = C.id where I.baja = 1", Variables.conexion);
 
         public static DataTable productosBaja = new DataTable();
 
-        public static SqlDataAdapter sqaProductoInAlert = new SqlDataAdapter("Select I.codigo as Codigo, P.Nombre, M.nombre as Marca, P.Modelo, C.color as Color, I.Precio, I.stock as Stock, I.alerta_stock as AlertaStock from Producto P inner join ProXm I on P.Cod_Producto = I.id_producto inner join Marca M on I.id_marca = M.id inner join Color C on I.id_color = C.id where I.alerta_stock > I.stock and I.baja = 0", Variables.conexion);
+        public static SqlDataAdapter sqaProductoInAlert = new SqlDataAdapter("Select I.codigo as Codigo, P.Nombre, M.nombre as Marca, P.Modelo, C.color as Color, (I.Precio*(100+I.precio_lista))/100 as 'Precio lista', I.stock as Stock, I.alerta_stock as AlertaStock from Producto P inner join ProXm I on P.Cod_Producto = I.id_producto inner join Marca M on I.id_marca = M.id inner join Color C on I.id_color = C.id where I.alerta_stock > I.stock and I.baja = 0", Variables.conexion);
 
         public static DataTable productos = new DataTable();
 

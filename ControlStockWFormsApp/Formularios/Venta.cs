@@ -37,6 +37,10 @@ namespace ControlStockWFormsApp
 			//dataGridView1.DataSource = Utils.DAOPedido.realizandoPedido;
             dataGridView1.DataSource = Utils.DAOVenta.realizandoVenta;
 
+            comboBox1.Items.Add("Contado");
+            comboBox1.Items.Add("Lista");
+            comboBox1.Items.Add("Re Venta");
+            comboBox1.SelectedIndex = 0;
         }
 
 		private void initDt()
@@ -58,7 +62,7 @@ namespace ControlStockWFormsApp
 			}
 		}
 
-        public void agregarProductoALaLista()
+        public void agregarProductoALaLista(int tipo)
         {
             if ("".Equals(textBox1.Text))
             {
@@ -89,10 +93,21 @@ namespace ControlStockWFormsApp
                         dr[2] = prod["Marca"];
                         dr[3] = prod["Modelo"];
                         dr[4] = Int32.Parse(textBox2.Text);
-                        dr[5] = float.Parse(prod["Precio"].ToString());
+                        if (tipo == 0)
+                        {
+                            dr["Precio"] = prod["Precio Contado"];
+                        }
+                        else if (tipo == 1)
+                        {
+                            dr["Precio"] = prod["Precio Lista"];
+                        }
+                        else if (tipo == 2)
+                        {
+                            dr["Precio"] = prod["Precio Re Venta"];
+                        }
                         realizandoVenta.Rows.Add(dr);
-
-                        Utils.DAOVenta.agregarProductoAlVenta(prod["Codigo"].ToString(), prod["Nombre"].ToString(), prod["Marca"].ToString(), prod["Modelo"].ToString(), Int32.Parse(textBox2.Text), float.Parse(prod["Precio"].ToString()), "-");
+                        setearPrecios(tipo);
+                        Utils.DAOVenta.agregarProductoAlVenta(prod["Codigo"].ToString(), prod["Nombre"].ToString(), prod["Marca"].ToString(), prod["Modelo"].ToString(), Int32.Parse(textBox2.Text), float.Parse(dr["Precio"].ToString()), "-");
                         dataGridView1.DataSource = realizandoVenta;
                     }
                     else
@@ -105,6 +120,37 @@ namespace ControlStockWFormsApp
                     MessageBox.Show("El producto no existe");
                 }
 
+            }
+        }
+
+        public void setearPrecios(int tipo) {
+            foreach (DataRow itemVenta in realizandoVenta.Rows)
+            {
+                foreach (DataRow dr in Utils.DAOProducto.productos.Rows)
+                {
+                    if (dr["Codigo"].Equals(itemVenta["Codigo"]))
+                    {
+                        if (tipo == 0) {
+                            itemVenta["Precio"] = dr["Precio Contado"]; 
+                        } else if (tipo == 1)
+                        {
+                            itemVenta["Precio"] = dr["Precio Lista"];
+                        } else if (tipo == 2)
+                        {
+                            itemVenta["Precio"] = dr["Precio Re Venta"];
+                        }
+                        itemVenta.AcceptChanges();
+                        break;
+                    }
+                }
+                foreach (DataRow dr in Utils.DAOVenta.realizandoVenta.Rows)
+                {
+                    if (dr[0].Equals(itemVenta["Codigo"]))
+                    {
+                        dr[5] = itemVenta["Precio"];
+                        dr.AcceptChanges();
+                    }
+                }
             }
         }
 
@@ -163,27 +209,28 @@ namespace ControlStockWFormsApp
         public void actualizarTotal()
         {
             float total = 0;
-            foreach (DataRow dr in Utils.DAOVenta.realizandoVenta.Rows)
-            {
-                total += Int32.Parse(dr["Cantidad"].ToString()) * float.Parse(dr["Precio"].ToString());
 
-            }
+                foreach (DataRow dr in Utils.DAOVenta.realizandoVenta.Rows)
+                {
+                    total += Int32.Parse(dr["Cantidad"].ToString()) * float.Parse(dr["Precio"].ToString());
+                }
+            
+
             totalVenta = total;
             textBox3.Text = total.ToString();
             textBox4.Text = total.ToString();
             label5.Text = "$ " + total.ToString();
 
-            
         }
 
-		private void button3_Click_1(object sender, EventArgs e)
+        private void button3_Click_1(object sender, EventArgs e)
 		{
 
 		}
 
         private void button4_Click(object sender, EventArgs e)
         {
-            agregarProductoALaLista();
+            agregarProductoALaLista(comboBox1.SelectedIndex);
             actualizarTotal();
         }
 
@@ -279,6 +326,12 @@ namespace ControlStockWFormsApp
         private void label10_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            setearPrecios(comboBox1.SelectedIndex);
+            actualizarTotal();
         }
     }
 }

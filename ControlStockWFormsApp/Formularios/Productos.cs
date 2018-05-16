@@ -78,14 +78,16 @@ namespace ControlStockWFormsApp
             
             DataGridViewSelectedRowCollection productoSeleccionado = dataGridView1.SelectedRows;
             
-            DataRow prod = Utils.DAOProducto.obtenerProductoById((int)productoSeleccionado[0].Cells[9].Value);
-            DataRow prodxm = Utils.DAOProducto.obtenerProdXMById((int)productoSeleccionado[0].Cells[8].Value);
+            DataRow prod = Utils.DAOProducto.obtenerProductoById((int)productoSeleccionado[0].Cells["id_producto"].Value);
+            DataRow prodxm = Utils.DAOProducto.obtenerProdXMById((int)productoSeleccionado[0].Cells["id"].Value);
             EditarProducto ep = new EditarProducto();
+
+
             if (productoSeleccionado.Count > 0 && prod!=null && prodxm!=null)
             {
                 ep.producto = prod;
                 ep.prodXM = prodxm;
-                ep.mostrarProducto((int)productoSeleccionado[0].Cells[9].Value, (int)productoSeleccionado[0].Cells[8].Value);
+                ep.mostrarProducto((int)productoSeleccionado[0].Cells["id_producto"].Value, (int)productoSeleccionado[0].Cells["id"].Value);
                 ep.ShowDialog();
                 dataGridView1.DataSource = Utils.DAOProducto.productos;
             }
