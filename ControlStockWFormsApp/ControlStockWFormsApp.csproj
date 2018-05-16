@@ -322,6 +322,7 @@
     <None Include="Resources\pie-chart.png" />
     <None Include="Resources\calendar2.png" />
     <None Include="Resources\delivery-man.png" />
+    <None Include="Resources\plus1.png" />
     <Content Include="Resources\shopping_cart_1.png" />
     <None Include="Resources\wallet.png" />
     <None Include="Resources\thumb-up.png" />

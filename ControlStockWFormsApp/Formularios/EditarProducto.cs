@@ -50,8 +50,8 @@ namespace ControlStockWFormsApp.Formularios
             button1.BackColor = System.Drawing.Color.FromArgb(198, 216, 175); //verde manzan
             button2.BackColor = System.Drawing.Color.FromArgb(198, 216, 175); //verde manzana
 
-            this.Width = 400;
-            this.Height = 500;
+            this.Width = 500;
+            this.Height = 550;
             this.StartPosition = FormStartPosition.CenterScreen; //form en el centro de la pantalla
         }
 
@@ -281,6 +281,47 @@ namespace ControlStockWFormsApp.Formularios
         private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void textPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //permite solo numeros con comas
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == ','))
+            { e.Handled = true; }
+            TextBox txtDecimal = sender as TextBox;
+            if (e.KeyChar == ',' && txtDecimal.Text.Contains(","))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textStock_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //solo enteros
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back))
+            { e.Handled = true; }
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //solo enteros
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back))
+            { e.Handled = true; }
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //solo enteros
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back))
+            { e.Handled = true; }
+        }
+
+        //textbox alerta de stock
+        private void textBox1_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            //solo enteros
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back))
+            { e.Handled = true; }
         }
     }
 }
