@@ -110,8 +110,9 @@ namespace ControlStockWFormsApp
                 MessageBox.Show("Por favor agregue al menos un proveedor");
             }
             else {
+                
 
-
+                //Utils.Variables.precioLista;
 
                 DataRow producto = Utils.DAOProducto.listaProducto.NewRow();
                 //Creo el producto
@@ -137,7 +138,7 @@ namespace ControlStockWFormsApp
                 //Cargo la edicion del producto
                 proxm[1] = Convert.ToInt32(comboBox1.SelectedValue);
                 proxm[2] = id;
-                proxm[3] = Convert.ToDouble(textPrecio.Text); //revisar esta falla, el precio es float
+                proxm[3] = Convert.ToDouble(textPrecio.Text);
                 proxm[4] = Convert.ToInt32(comboBox2.SelectedValue);
                 proxm[5] = 0; //Convert.ToInt32(textStock.Text);
 				if (checkBox1.Checked)
@@ -307,6 +308,16 @@ namespace ControlStockWFormsApp
             //solo enteros
             if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back))
             { e.Handled = true; }
+        }
+
+        private void textPrecio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

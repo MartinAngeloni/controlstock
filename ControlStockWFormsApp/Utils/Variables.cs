@@ -20,6 +20,7 @@ namespace ControlStockWFormsApp.Utils
         public static DataGridViewRow selectedProductoXPedido;
 
         public static int cantXPedido;
+        
 
 		public static Boolean checkStringConnection(){
 

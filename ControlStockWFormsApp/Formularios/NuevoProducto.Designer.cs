@@ -122,6 +122,7 @@
             this.textPrecio.Name = "textPrecio";
             this.textPrecio.Size = new System.Drawing.Size(273, 38);
             this.textPrecio.TabIndex = 1;
+            this.textPrecio.TextChanged += new System.EventHandler(this.textPrecio_TextChanged);
             this.textPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textPrecio_KeyPress);
             // 
             // button1
@@ -542,6 +543,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(248, 38);
             this.textBox2.TabIndex = 2;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // label12

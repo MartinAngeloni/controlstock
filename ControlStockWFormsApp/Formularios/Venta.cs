@@ -57,8 +57,19 @@ namespace ControlStockWFormsApp
         public void quitarProductoDeLaLista() {
 			if (dataGridView1.SelectedRows.Count != 0)
 			{
-				Utils.DAOVenta.quitarProductoDeLista(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
-				dataGridView1.Rows.RemoveAt(dataGridView1.SelectedRows[0].Index);
+                Utils.DAOVenta.quitarProductoDeLista(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+                for (int i = 0; i < realizandoVenta.Rows.Count; i++)
+                {
+                    DataRow dr = realizandoVenta.Rows[i];
+                    if (dr["Codigo"].ToString().Equals(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()))
+                    {
+                        realizandoVenta.Rows[i].Delete();
+
+                        Console.WriteLine("asd");
+                        break;
+                    }
+                }
+                realizandoVenta.AcceptChanges();
 			}
 		}
 
@@ -128,6 +139,7 @@ namespace ControlStockWFormsApp
             {
                 foreach (DataRow dr in Utils.DAOProducto.productos.Rows)
                 {
+                    
                     if (dr["Codigo"].Equals(itemVenta["Codigo"]))
                     {
                         if (tipo == 0) {

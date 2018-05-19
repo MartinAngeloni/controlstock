@@ -88,23 +88,24 @@ namespace ControlStockWFormsApp.Utils
 				if (dr["Codigo"].ToString().Equals(codigo))
 				{
 					realizandoVenta.Rows[i].Delete();
-					realizandoVenta.AcceptChanges();
+					
 					Console.WriteLine("asd");
 					break;
 				}
 			}
-
-			for (int i = 0; i < prodXVenta.Rows.Count; i++)
+            realizandoVenta.AcceptChanges();
+            for (int i = 0; i < prodXVenta.Rows.Count; i++)
 			{
 				DataRow dr = prodXVenta.Rows[i];
 				if (dr["id_producto"].Equals(codigo))
 				{
 					dr.Delete();
+                    
 					break;
 				}
 			}
-
-		}
+            prodXVenta.AcceptChanges();
+        }
 
 		public static void obtenerVenta()
 		{
