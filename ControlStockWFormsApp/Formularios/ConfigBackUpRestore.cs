@@ -24,7 +24,13 @@ namespace ControlStockWFormsApp.Formularios
 
 			if (Utils.BackUpRestore.checkAndLoadBackUpDirectory())
 			{
-				Login login = new Login();
+
+                Utils.BackUpRestore.saveFiles();
+                Utils.BackUpRestore.checkFilesAndDoFullBackUp();
+
+
+
+                Login login = new Login();
 				login.Show();
 				this.Close();
 			}
@@ -69,6 +75,7 @@ namespace ControlStockWFormsApp.Formularios
 				if (!Utils.BackUpRestore.checkAndLoadBackUpDirectory())
 				{
 					Utils.BackUpRestore.setGlobalDirectory(Utils.BackUpRestore.globalDirectory);
+                    Utils.BackUpRestore.saveFiles();
 					Utils.BackUpRestore.checkFilesAndDoFullBackUp();
                     comprobar();
                 }

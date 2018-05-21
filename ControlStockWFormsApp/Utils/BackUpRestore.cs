@@ -151,7 +151,66 @@ namespace ControlStockWFormsApp.Utils
 			}
 		}
 
-		public static void fullBackUpColor()
+        public static void saveFiles()
+        {
+            //Vamos a comprobar
+            if (!error)
+            {
+                Directory.CreateDirectory(@globalDirectory + "\\" + DateTime.Now.ToString("yyyyMMddHHmmss") + "\\");
+                if (File.Exists(@globalDirectory + @colorFileName))
+                {
+                    File.Move(@globalDirectory + @colorFileName, @globalDirectory + "\\" + DateTime.Now.ToString("yyyyMMddHHmmss") + "\\"  + @colorFileName);
+                }
+                if (File.Exists(@globalDirectory + @marcaFileName))
+                {
+                    File.Move(@globalDirectory + @marcaFileName, @globalDirectory + "\\" + DateTime.Now.ToString("yyyyMMddHHmmss") + "\\" + @marcaFileName);
+                }
+                if (File.Exists(@globalDirectory + @productoFileName))
+                {
+                    File.Move(@globalDirectory + @productoFileName, @globalDirectory + "\\" + DateTime.Now.ToString("yyyyMMddHHmmss") + "\\" + @productoFileName);
+                }
+                if (File.Exists(@globalDirectory + @usuarioFileName))
+                {
+                    File.Move(@globalDirectory + @usuarioFileName, @globalDirectory + "\\" + DateTime.Now.ToString("yyyyMMddHHmmss") + "\\" + @usuarioFileName);
+                }
+                if (File.Exists(@globalDirectory + @pedidoFileName))
+                {
+                    File.Move(@globalDirectory + @pedidoFileName, @globalDirectory + "\\" + DateTime.Now.ToString("yyyyMMddHHmmss") + "\\" + @pedidoFileName);
+                }
+                if (File.Exists(@globalDirectory + @ventaFileName))
+                {
+                    File.Move(@globalDirectory + @ventaFileName, @globalDirectory + "\\" + DateTime.Now.ToString("yyyyMMddHHmmss") + "\\" + @ventaFileName);
+                }
+                if (File.Exists(@globalDirectory + @prodXMFileName))
+                {
+                    File.Move(@globalDirectory + @prodXMFileName, @globalDirectory + "\\" + DateTime.Now.ToString("yyyyMMddHHmmss") + "\\" + @prodXMFileName);
+                }
+                if (File.Exists(@globalDirectory + @prodXVentaFileName))
+                {
+                    File.Move(@globalDirectory + @prodXVentaFileName, @globalDirectory + "\\" + DateTime.Now.ToString("yyyyMMddHHmmss") + "\\" + @prodXVentaFileName);
+                }
+                if (File.Exists(@globalDirectory + @prodXPedidoFileName))
+                {
+                    File.Move(@globalDirectory + @prodXPedidoFileName, @globalDirectory + "\\" + DateTime.Now.ToString("yyyyMMddHHmmss") + "\\" + @prodXPedidoFileName);
+                }
+                if (File.Exists(@globalDirectory + @proveedor))
+                {
+                    File.Move(@globalDirectory + @proveedor, @globalDirectory + "\\" + DateTime.Now.ToString("yyyyMMddHHmmss") + "\\" + @proveedor);
+                }
+                if (File.Exists(@globalDirectory + @prodXProveedor))
+                {
+                    File.Move(@globalDirectory + @prodXProveedor, @globalDirectory + "\\" + DateTime.Now.ToString("yyyyMMddHHmmss") + "\\" + @prodXProveedor);
+                }
+            }
+            else
+            {
+                throw new Exception();
+            }
+        }
+
+
+
+        public static void fullBackUpColor()
 		{
 			DAOColor.obtenerColores();
 			foreach (DataRow dt in DAOColor.colores.Rows) {

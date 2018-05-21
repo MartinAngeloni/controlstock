@@ -40,6 +40,7 @@ namespace ControlStockWFormsApp
             comboBox1.Items.Add("Contado");
             comboBox1.Items.Add("Lista");
             comboBox1.Items.Add("Re Venta");
+            comboBox1.Items.Add("Tarjeta");
             comboBox1.SelectedIndex = 0;
         }
 

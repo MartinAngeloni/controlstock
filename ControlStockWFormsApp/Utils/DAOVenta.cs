@@ -147,18 +147,20 @@ namespace ControlStockWFormsApp.Utils
         }
         
 
-        public static void CrearVenta(float total, float diferencia)
+        public static void CrearVenta(float total, float diferencia, int tarjeta, int cuotas, float contado)
 		{
 			try
 			{
 				Variables.conexion.Open();
-				String sqlvent = "insert into Venta (descripcion,fecha,total,diferencia_cambio) values (@desc,@fecha,@total,@diff)";
+                String sqlvent = "insert into Venta (descripcion,fecha,total,diferencia_cambio) values (@desc,@fecha,@total,@diff)";
 				SqlCommand cmd = new SqlCommand(sqlvent, Variables.conexion);
 				cmd.Parameters.AddWithValue("@desc", venta.Rows[0][2]);
 				cmd.Parameters.AddWithValue("@fecha", venta.Rows[0][1]);
                 cmd.Parameters.AddWithValue("@total", Math.Round(total,2));
                 cmd.Parameters.AddWithValue("@diff", diferencia - total);
-
+                cmd.Parameters.AddWithValue("@tarjeta", tarjeta);
+                cmd.Parameters.AddWithValue("@cuotas", cuotas);
+                cmd.Parameters.AddWithValue("@contado", contado);
 
                 cmd.CommandType = CommandType.Text;
 				cmd.ExecuteNonQuery();
