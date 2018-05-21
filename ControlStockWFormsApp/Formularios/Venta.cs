@@ -345,5 +345,26 @@ namespace ControlStockWFormsApp
             setearPrecios(comboBox1.SelectedIndex);
             actualizarTotal();
         }
+
+        private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //solo enteros
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back))
+            { e.Handled = true; }
+        }
+
+        private void textBox6_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //solo enteros
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back))
+            { e.Handled = true; }
+        }
+
+        private void textBox7_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //solo enteros
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back))
+            { e.Handled = true; }
+        }
     }
 }
