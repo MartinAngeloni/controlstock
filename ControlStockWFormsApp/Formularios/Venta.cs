@@ -168,7 +168,7 @@ namespace ControlStockWFormsApp
         }
 
         public void realizarVenta() {
-			Utils.DAOVenta.CrearVenta(totalVenta, float.Parse(textBox3.Text)); 
+			Utils.DAOVenta.CrearVenta(totalVenta, float.Parse(textBox3.Text), Int32.Parse(textBox6.Text), Int32.Parse(textBox5.Text), float.Parse(textBox7.Text)); 
 
 			if (Utils.DAOVenta.error)
 			{
@@ -366,6 +366,44 @@ namespace ControlStockWFormsApp
             //solo enteros
             if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back))
             { e.Handled = true; }
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+            actualizarMonto();
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+            actualizarMonto();
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            actualizarMonto();
+        }
+
+        private void actualizarMonto()
+        {
+            if (!"".Equals(textBox6.Text) && !"".Equals(textBox5.Text))
+            {
+                if ("".Equals(textBox7.Text)) {
+                    label15.Text = (((totalVenta*(100+Int32.Parse(textBox6.Text)))/100) / Int32.Parse(textBox5.Text)).ToString();
+                }else
+                {
+                    label15.Text = ((((totalVenta- float.Parse(textBox7.Text)) * (100 + Int32.Parse(textBox6.Text))) / 100)/Int32.Parse(textBox5.Text)).ToString();
+                }
+            }
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel7_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
